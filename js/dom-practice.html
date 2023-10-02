@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Practice</title>
+</head>
+<body>
+    <h1 id="myHeading">Hello, World!</h1>
+    <h1 class="myclass">Hello, World class!</h1>
+    <h1 class="myclass">Hello, World class1!</h1>
+    <button id="changeTextButton">Change Text</button>
+
+    <a id="myLink" href="https://www.example.com" target="_blank">Visit Example</a>
+
+     <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <div id="container">
+        <!-- New elements will be inserted here -->
+    </div>
+
+    <div id="myElement" data-user-id="123" data-username="john_doe">User Profile</div>
+
+    <div id="myElementNew" class="box red">Box Element</div>
+
+    <script>
+        //get complete element using id
+        const headingElement = document.getElementById("myHeading");
+        
+        //get complete elements using class
+        const class_element = document.getElementsByClassName('myclass')
+
+        //get complete elements using class
+        const tags = document.getElementsByTagName('li');
+
+        //query selector for both
+        const query_id = document.querySelector('#myHeading');
+        const query_class = document.querySelector('.myclass');
+        const query_tag = document.querySelector('li');
+
+        // query selector all
+        const query_classes = document.querySelectorAll('.myclass')
+
+        //get inner html
+        const heading = document.getElementById('myList').innerHTML;
+
+        //get inner text 
+        const heading_text = document.getElementById('myList').innerText;
+
+        //change style 
+        // const style_heading = document.getElementById('myHeading').style.color = "red";
+        const heading_style = document.getElementById('myHeading');
+        heading_style.style.color = "red";
+
+        //create new element
+        const container = document.getElementById("container");
+
+        const new_paragraph = document.createElement('p');
+        new_paragraph.innerText = "appended paragraph";
+
+        const new_paragraph1 = document.createElement('p');
+        new_paragraph1.innerText = "appended paragraph next";
+
+        const new_paragraph0 = document.createElement('p');
+        new_paragraph0.innerText = " prepended paragraph First";
+        
+        // append can add multiple elemets at once.
+        container.append(new_paragraph,new_paragraph1);
+
+        // append single element at last
+        container.appendChild(new_paragraph);
+        // container.append(new_paragraph1);
+
+        //append first values
+        container.prepend(new_paragraph0);
+
+        //remove element
+        const deleted_element = document.querySelector('#myHeading');
+        deleted_element.remove();
+
+        //get attributes
+
+        const href = document.getElementById("myLink").getAttribute('href');
+        console.log(href);
+
+        //set attributes 
+        const set_attr = document.getElementById('myLink').setAttribute('alt','image link')
+        
+        //get attr directly
+        const attr_value = document.getElementById("myLink").href
+
+        //remove attribute
+        document.getElementById('myLink').removeAttribute('target');
+
+        //get data set values
+        const element = document.getElementById("myElement");
+        const userId = element.dataset.userId;
+        const username = element.dataset.username;
+
+        //set data set values 
+
+        element.dataset.userId = "456";
+        element.dataset.username = "jane_smith";
+
+        //create new data set attr
+
+        // Create a new custom data attribute and set its value using the dataset property
+        element.dataset.userphone = "New Value";
+
+
+        //
+        const element = document.getElementById("myElement");
+
+        // Add a new class to the element using classList.add()
+        element.classList.add("green");
+
+        // Remove a class from the element using classList.remove()
+        element.classList.remove("red");
+
+        // Toggle a class on the element using classList.toggle()
+        element.classList.toggle("blue");
+
+        console.log(userId);
+    </script>
+</body>
+</html>

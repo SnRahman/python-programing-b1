@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+    <h1 id="dom_heading" >This is dom Heading!</h1>
+
+    <div id="dom_div">
+        <h5>Div Heading</h5>
+        <p class="paragraph" id="paragraph" >
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <p class="paragraph">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+
+        <h2>dummy text of the printing and</h2>
+        <h2 id="dump_h2">dummy text of the printing (id)</h2>
+        <h2 class="dump_h2">dummy text of the printing and</h2>
+        <h2 class="dump_h2">dummy text of the printing and</h2>
+        <h2 class="dump_h2">dummy text of the printing and</h2>
+        <h2>dummy text of the printing and</h2>
+        <h2>dummy text of the printing and</h2>
+        <h2 class="dump_h2">dummy text of the printing and</h2>
+
+        
+    </div>
+
+    <div id="element_insert">
+        <h1>Element Heading</h1>
+        <p>already defined paragraph.</p>
+    </div>
+
+    <a id="anchor" href="https://www.google.com">Google</a>
+
+
+    <div id="dataset" data-user_name="user_1">
+        <p>already defined paragraph.</p>
+    </div>
+    <script>
+        //get any id from the document
+        let dom_heading = document.getElementById('dom_heading');       
+        console.log(dom_heading);
+
+        let dom_div = document.getElementById('dom_div');
+        console.log(dom_div);
+
+        // get any class element from document
+        let dom_p = document.getElementsByClassName('paragraph');
+        console.log(dom_p);
+
+        //get any tag element from document
+        let tag = document.getElementsByTagName('h2');
+        console.log(tag);
+    
+        //query selector from document
+        let query = document.querySelector('#dump_h2');
+        console.log(query)
+
+        let query_class = document.querySelector('.dump_h2');
+        console.log(query_class);
+
+        let query_tag = document.querySelector('h2');
+        console.log(query_tag);
+
+        //query selector all from document
+
+        let query_all = document.querySelectorAll('h2')
+        console.log(query_all);
+        
+        let query_all_class = document.querySelectorAll('.dump_h2')
+        console.log(query_all_class);
+
+        //get inner text from any element
+
+        let heading_element = document.getElementById('dom_heading').innerText ;
+        console.log(heading_element);
+        //change inner text
+
+        let change_heading = document.getElementById('dom_heading');
+
+        change_heading.innerText = "Heading is changed";
+        change_heading.innerHTML = "<h2>Heading is changed</h3>";
+        // console.log(change_heading.innerText);
+
+
+        let paragraph_elements = document.getElementsByClassName('dump_h2');
+        console.log(paragraph_elements);
+        
+        let paragraph_text = paragraph_elements.innerText;
+        console.log(paragraph_text);
+
+        console.log(paragraph_elements[3].innerText);
+
+        
+
+        // get inner html of an element form document
+
+        let inner_html = document.getElementById("dom_div").innerHTML;
+        // let inner_html = inner_html_container.innerHTML;
+        console.log(inner_html);
+
+
+        // change style
+        document.getElementById('dom_heading').style.color = "red";
+
+        // change class background color
+        let class_elements = document.getElementsByClassName('paragraph');
+        console.log(class_elements);
+        for(a of class_elements) {
+            a.style.color = "red";
+            a.style.backgroundColor = 'green';
+        }
+
+        //change style 
+        class_elements[1].style.color = 'yellow';
+
+        //create new element 
+        let element_div = document.getElementById('element_insert');
+
+        let new_p1 =  document.createElement('p').innerText = 'Assigned text on creation.';
+        let new_p =  document.createElement('p');
+        new_p.innerText = "this is div paragraph.";
+
+        //append multiple values at once
+        // element_div.append(new_p,new_p1);
+
+        //append single value at a time
+        // element_div.appendChild(new_p);
+
+        //insert new element at first
+        element_div.prepend(new_p1);
+        
+
+        //remove element
+        let element_rem = document.getElementById('dump_h2');
+        element_rem.remove();
+
+        // console.log(element_rem);
+
+
+        //get attribues 
+
+        let anchor_cont = document.getElementById('anchor').getAttribute('href');
+
+
+        // set new attributes
+        document.getElementById('anchor').setAttribute('target','_blank')
+        document.getElementById('anchor').setAttribute('href','https://www.twitter.com')
+
+        //get attributes without using getAttribute
+        let anchor = document.getElementById('anchor').target;
+
+         //set attributes without using setAttribute
+
+        document.getElementById('anchor').target = "_parent";
+        console.log(anchor);
+
+        //remove attribute
+        document.getElementById('anchor').removeAttribute('target');
+
+        //dataset attributes
+        let dataset_cont = document.getElementById('dataset');
+
+        let dataset_value = dataset_cont.dataset.user_name;
+    
+        //add or update dataset attributes
+        dataset_cont.dataset.user_id = 'id_1';
+
+
+
+        console.log(dataset_value);
+
+
+
+    </script>
+</body>
+</html>

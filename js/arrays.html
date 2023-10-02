@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    
+    <div>
+        <h1>Tasks</h1>
+        <ul>
+            <li>Find the last element of an array without giving a hard-coded index.</li>
+            <li>Check whether the first or the last index of an array has a specified 
+                value, let's say 5.</li>
+            <li>Make an array to store the names of students and check whether that
+                 array has your own name or not and also return the index of that value.</li>
+            <li>Add the array element at the specified index.</li>
+            <li>Delete the array element from the specified index.</li>
+        </ul>
+    </div>
+
+    <script>
+        console.log('Arrays')
+        
+        // make/ declare arrays
+        let arr1 = [];
+
+        let arr = [1,45,78,3787,121,787];
+
+        console.log('Simple arrya')
+        console.log(arr);
+
+        let new_arr1 = new Array();
+        let new_arr = new Array('Lahore','Islamabad','Karachi','Sialkot');
+        let new_arr_num = new Array(12.2 , 14.5 ,89.6, 563.2);
+        let new_arr_float = new Array("12.2" , "14.5" ,"89.6", "563.2");
+
+        console.log('Class arrya')
+        console.log(new_arr);
+        console.log(new_arr_num);
+        console.log(new_arr_float);
+
+
+        //access arrays
+        console.log('Accessing arrays')
+        console.log( arr[2]  );
+        console.log( arr[4] );
+        console.log( arr[10] );
+
+
+        // get type of any dataypes
+
+        let num = 2;
+        let string = "get name";
+        console.log('Get type');
+        console.log( typeof arr );
+        console.log( typeof string );
+        console.log( typeof num );
+
+        //get array type
+
+        console.log( Array.isArray(string) );
+        console.log( Array.isArray(arr) );
+
+
+        console.log('instance of');
+        console.log( arr instanceof Array );
+        console.log( num instanceof Array );
+
+
+        // toString()
+
+        console.log('convert to String');
+
+
+
+        // console.log(arr.toString());
+        let arr_to_string = arr.toString();
+
+        console.log(typeof arr_to_string);
+        console.log(arr_to_string);
+
+
+        // join 
+        console.log('Join array');
+
+        console.log( arr.join() );
+        console.log( arr.join("+") );
+        console.log( arr.join("") );
+        console.log( arr.join("") );
+
+
+        // let arr_join = arr.join();
+        // let arr_join = arr.join("");
+        // console.log(arr_join);
+
+
+        //add new values in array
+        console.log("push");
+        console.log(arr);
+
+        arr.push(900);
+        console.log(arr);
+
+        arr.push("900");
+        console.log(arr);
+
+        arr.push(2);
+        console.log(arr);
+
+        // remove value from array
+        console.log("pop");
+        console.log(arr);
+
+        arr.pop();
+        console.log(arr);
+
+        arr.pop();
+        console.log(arr);
+
+
+        // add value at start of array
+        console.log("unshift");
+        console.log(arr);
+
+        arr.unshift(10);
+        console.log(arr);
+
+        arr.unshift(20);
+        console.log(arr);
+
+
+        //remove value from the start
+        console.log("shift");
+        console.log(arr);
+
+        arr.shift();
+        console.log(arr);
+
+        // remove multiple items form specific index
+        console.log("splice - remove");
+        console.log(arr);
+
+        arr.splice(1,3)
+        console.log(arr);
+
+
+        // add multiple/sigle items after specific index.
+        console.log("splice - add");
+        console.log(arr);
+
+        arr.splice(2,0,1,2,3,4,5)
+        console.log(arr);
+
+
+        // get a chunk of existing array.
+        console.log("slice");
+        console.log(arr);
+
+        var slice_arr = arr.slice(2,6);
+        // console.log( arr.slice(2,6) ) ;
+        console.log(arr);
+        // console.log(slice_arr)
+
+
+        //delete index value
+
+        console.log(' delete index')
+        console.log(arr);   
+        delete arr[6];
+        console.log(arr);
+        
+
+        //update existirng index value
+        arr[6] = 54;
+        console.log(arr);
+
+
+        // concate two arrays
+
+        let arr2 = [1,2,3];
+        let arr3 = [100,200,300];
+
+        let arr4 = arr2.concat(arr3);
+
+        console.log(arr4);
+
+        // get index of any value presend in array
+        
+        console.log('index of');
+        console.log(arr);
+
+        let index = arr.indexOf(787);
+        let index1 = arr.indexOf(1000);
+
+        console.log(index);
+        console.log(index1);
+
+        // get last index of any value presend in array
+
+        console.log('last index of');
+        let arr5 = [1,2,3,5,7,5,9898,5];
+        console.log(arr5)
+        console.log( arr5.indexOf(5) );
+        let last_index = arr5.lastIndexOf(5);
+        console.log(last_index)
+
+        // check values present in array or not
+
+        console.log( arr.includes(100) );
+        console.log( arr.includes(900) );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table</title>
+</head>
+<body>
+
+    <style>
+        table, td, th {
+            border: 1px solid black;
+        }
+    </style>
+  
+    <!-- table td and tr -->
+    <h1>Table 1</h1>
+    <table>
+        <tr>
+            <td>item 1</td>
+            <td>item 2</td>
+            <td>item 3</td>
+        </tr>
+        <tr>
+            <td>col 1 </td>
+            <td>col 2 </td>
+            <td>col 3 </td>
+        </tr>
+        <tr>
+            <td>col 1 </td>
+            <td>col 2 </td>
+            <td>col 3 </td>
+        </tr>
+    </table>
+    
+    <hr>  
+
+    <h1>Table 2</h1>
+
+    
+    <!-- table 2 -->
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Extended</th>
+        </tr>
+        <tr>
+            <td>Hardish</td>
+            <td></td>
+            <td>$500</td>
+            <td>$400</td>
+        </tr>
+        <tr>
+            <td>CD Drive</td>
+            <td>1</td>
+            <td>$400</td>
+            <td>$500</td>
+        </tr>
+    </table>
+
+    <hr>
+    <h1>Table 3</h1>
+
+    <!-- table 3 -->
+    <table>
+        <caption>Product List</caption>
+        <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Extended</th>
+        </tr>
+        <tr>
+            <td>Hardish</td>
+            <td></td>
+            <td>$500</td>
+            <td>$400</td>
+        </tr>
+        <tr>
+            <td>CD Drive</td>
+            <td>1</td>
+            <td>$400</td>
+            <td>$500</td>
+        </tr>
+    </table>
+
+    <hr>
+    <h1>Table 4</h1>
+
+     <!-- table 4 -->
+     <table>
+        <caption>Product List</caption>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Extended</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Hardish</td>
+                <td></td>
+                <td>$500</td>
+                <td>$400</td>
+            </tr>
+            <tr>
+                <td>CD Drive</td>
+                <td>1</td>
+                <td>$400</td>
+                <td>$500</td>
+            </tr>
+            <tr>
+                <td>CDs</td>
+                <td>10</td>
+                <td>$20</td>
+                <td>$50</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <td colspan="3" >footer 1</td>
+            <td>4</td>
+        </tfoot>
+       
+    </table>
+    
+    <hr>
+    <h1>Table 5</h1>
+    
+    <table>
+        <caption>Members List</caption>
+        <colgroup>
+            <col >
+            <col style="background-color: red; ">
+            <col >
+        </colgroup>
+        
+        <thead>
+            <tr >
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Khalid</td>
+                <td>Male</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>Farah</td>
+                <td>Female</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>Yara</td>
+                <td>Female</td>
+                <td>22</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <!-- row span example -->
+    <h1>Table 6</h1>
+    
+    <table>
+        <caption>Members List</caption>
+        <thead>
+            <tr >
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Khalid</td>
+                <td>Male</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>Farah</td>
+                <td>Female</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>Yara</td>
+                <td>Female</td>
+                <td rowspan="3">22</td>
+            </tr>
+            <tr>
+                <td>Yara</td>
+                <td>Female</td>
+                
+            </tr> 
+            <tr>
+                <td>Yara</td>
+                <td>Female</td>
+                
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

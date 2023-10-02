@@ -1,0 +1,72 @@
+.container {
+    background-color:bisque;
+    display: grid;
+    grid-auto-columns: 100px;
+    grid-auto-rows: 100px;
+    /* height: 1500px; */
+
+    /* grid-template-columns: 100px 200px 300px; */
+    /* grid-template-columns: auto auto auto auto; */
+    /* grid-template-columns: 1fr 2fr 3fr; */
+    /* grid-template-columns: repeat(3,300px); */
+    /* grid-template-columns: minmax(100px,600px) minmax(100px,200px) minmax(100px,800px) minmax(100px,800px) minmax(100px,800px) minmax(100px,800px) minmax(100px,800px) minmax(100px,800px); */
+    /* grid-template-columns:  minmax(100px,800px) minmax(100px,800px) minmax(100px,800px) minmax(100px,800px); */
+    /* grid-template-columns: repeat(5,minmax(500px,800px)); */
+    grid-template-columns: repeat(auto-fit,minmax(100px,400px));
+    /* grid-template-columns: auto; */
+
+    /* column-gap: 20px; */
+    /* row-gap: 20px; */
+    /* gap: 10px; */
+    gap: 10px 20px;
+    padding: 20px;
+
+    justify-content: center;
+    align-content: center;
+
+    grid-template-rows: 200px 100px;
+    /* grid-template-rows:auto auto; */
+
+}
+
+.container > div {
+    padding: 10px;
+    background-color:chocolate;
+    color: #FFF;
+    /* margin: 10px; */
+}
+
+
+
+.container1 {
+    padding: 25px;
+    background-color:bisque;
+    display: grid;
+    grid-template-columns: repeat(5,auto);
+    grid-template-rows: repeat(3,100px);
+    gap: 25px;
+    margin-bottom: 100px;
+}
+
+
+.container1 > div {
+    padding: 10px;
+    background-color:chocolate;
+    color: #FFF;
+    /* margin: 10px; */
+}
+
+
+.item1 {
+    /* grid-column-start: 1;
+    grid-column-end:    6; */
+    grid-column: 1 / 6;
+  }
+    
+.item2 {
+    /* grid-row-start: 2;
+    grid-row-end: 5; */
+    grid-row: 2 / 5;
+
+  }
+

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather app</title>
+    <style>
+         body {
+            background-color: #1dbf73;
+        }
+        .container {
+            width: 600px;
+            margin: auto;
+            border: 1px solid grey;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+        }
+        input {
+            width: 390px;
+            padding: 20px;
+            border: 2px solid #1dbf73;
+            border-radius: 5px;
+        }
+
+        form button {
+            padding: 20px;
+            background-color: #6086DC;
+            color: white;
+            border: 1px solid #6086DC;
+            border-radius: 5px;
+            font-size: 14px;
+            /* margin-left: 50px; */
+        }
+        .dashboard {
+            display: flex;
+            flex-direction: column;
+            /* background-color: #6086DC; */
+            width: 400px;
+            margin: 20px;
+        }
+        #date{
+            color: #1dbf73;
+        }
+        span {
+            margin: 5px;
+        }
+
+        #clouds{
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body>
+    
+   
+
+    <div class="container">
+        <form>
+            <input type="text" placeholder="Enter City Name">
+        </form>
+
+        <div class="dashboard">
+            <span id="date"></span>
+            <span id="location"></span>
+            <span id="temp"></span>
+            <span id="clouds"></span>
+            <span id="humidity"></span>
+            <span id="pressure"></span>
+            
+        </div>
+
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

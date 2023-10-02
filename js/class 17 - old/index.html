@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        .todo-container {
+            width: 600px;
+            margin: auto;
+            border: 1px solid grey;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        input {
+            width: 500px;
+        }
+        ul {
+            list-style: none;
+        }
+        li {
+            margin: 20px;
+            text-align: center;
+        }
+        li:hover {
+            text-decoration: line-through;
+            cursor: pointer;
+        }
+        .completed {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div class="todo-container">
+        <form>
+            <input type="text" placeholder="Enter Todo">
+        </form>
+
+        <ul></ul>
+    </div>
+
+
+    <script src="./script.js"></script>
+</body>
+</html>

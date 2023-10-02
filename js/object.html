@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <div>
+        <h1>Task</h1>
+            Make an array of objects (an array that will have objects)
+             to store the student information and
+             access it as hard-coded.
+            <h2>Information to store:</h2> 
+            Name, age, registration number, course, favorite programming 
+            languages (should be an array), 
+             Marks of 5 different subjects (should be an object).
+            <h2>The operations to perform:</h2>
+            <ul>
+                <li>Display every single property of any student.</li>
+                <li>Display the first and last favorite 
+                    programming language of any student.</li>
+                <li>Display the marks of any 2 subjects of any student.</li>
+            </ul>
+    </div>
+
+    <script>
+        [1,2,3,4];
+        let studnet_info = [{
+            name : "name",
+            age : "age",
+            registration_number : "registration_number",
+            course : "Python Programing",
+            fav_prog_lang : ['language1','language2','language3','language4'],
+            marks : {
+                urdu : 56,
+                english : 66,
+                math : 89,
+                physics : 45,
+                chemistry : 75,
+            }
+        }];
+
+        console.log(studnet_info[0]['fav_prog_lang'][0]);
+        console.log(studnet_info[0]['fav_prog_lang'][3]);
+        console.log(studnet_info[0]['marks']['urdu']);
+        console.log(studnet_info[0]['marks']['english']);
+
+
+        let arr = [1,2,3,4,5,6,7];
+        
+        let car_arr = ["toyota","civic","2023","Black"];
+
+        console.log(car_arr);
+
+        // declare object
+        let car_obj = {
+            company : "toyota", 
+            model : "civic",
+            year : "2023",
+            color : "Black"
+        }
+        
+        console.log(car_obj);
+
+        //access object values
+        // 1
+
+        console.log( car_obj['year'] );
+        console.log( car_obj["company"] );
+
+        //2 
+
+        console.log( car_obj.model );
+
+        let car_color = car_obj.color;
+        console.log(car_color);
+
+        // insert new values in object.
+
+        // add new values in objcet
+        car_obj.rating = 8.9; 
+        car_obj.price = 0 ; 
+
+        console.log(car_obj);
+
+        // delete values from object
+
+        delete car_obj.price;
+
+        console.log(car_obj);
+
+        // update object key value 
+
+        car_obj.rating = 8;
+        car_obj.year = '';
+
+        console.log(car_obj);
+
+
+        // check all keys in object.
+        
+        // let car_keys = Object.keys(car_obj) ;
+        let car_keys = Object.keys( car_obj );
+        console.log(car_keys);
+
+
+        // get all values in object.
+
+        let car_values = Object.values( car_obj ); 
+        console.log( Object.values( car_obj ) )
+        console.log(car_values);
+
+        // get all keyas and values from object.
+
+        let car_keys_values = Object.entries( car_obj );
+        console.log(car_keys_values);
+
+
+        // 2d dimentional arrays
+        // let car_arr = ["toyota","civic","2023","Black"];
+
+        let car_array = [  
+                            ['company','totoya'] ,
+                            "company" ,
+                            ['year' ,'2023'],
+                            ['color','black' ]
+                        ];
+
+
+        //check arrays length
+        
+        let arr_length = arr.length;
+        console.log(arr_length);
+        console.log( car_array.length );
+        // 
+
+        console.log( car_array[1].length )
+
+
+        // use array inside an object
+
+        let company = {
+            "name" : "toyota",
+            "founded" : 1937,
+            "employes" : 366283,
+            "share_value" : 7203.25,
+            "cars" :  ['Fortuner','corolla', 'Land cruiser', 'Mazda' ]
+        }
+        console.log(company);
+
+        let students = [ {
+            
+        } ,{}  ]
+
+
+    </script>
+</body>
+</html>

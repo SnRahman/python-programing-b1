@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Functions</title>
+</head>
+<body>
+    <div>
+        <h1> Task </h1>
+        <h3>same as tomorrow but using functions</h3>
+        <ul>
+            <li>Check two given numbers and return true if one of the numbers is 50 or if their sum is 50.</li>
+            <li>Check from the given integer, whether it is positive or negative.</li>
+            <li>Check whether a given number is even or odd.</li>
+            <li>Check whether a given positive number is a multiple of 3.</li>
+            <li>Determine whether a given year is a leap year.</li>
+        </ul>        
+    </div>
+
+    <script>
+        // function defination
+        function name() { 
+            let a = 10;
+            let b = 20;
+
+            alert(a+b);
+        }
+
+        function sum1() {
+            let c = 25;
+            let d = 30;
+            alert(c+d);
+        }
+
+        function sum_temp() {
+            let c = 55;
+            let d = 50;
+            alert(c+d);
+        }
+       
+        // function arguments/parameters and concatenation
+        function sub(a,b) {
+            let text = "Subtraction of value: " + a + "and value:" + b +  " is: " + (b-a);
+            alert(text);
+        }
+
+
+        function sum(a,b,c){
+            document.write( "Sum is: " + (a+b+c))
+        }
+
+        // sub(10,30);
+        // sum(10,30,20);
+
+        // parameters passing
+        function alert_text(text){
+            alert(text);
+        }
+
+
+
+        //parameters default value
+        function write_data(data = "please assing parameter") {
+            document.write(data);
+        }
+
+        // write_data("Hello World!");
+        // write_data();
+
+
+        //returning furntion
+
+        function mul(a,b) {
+            return a*b;
+            // alert(a*b);
+        }
+
+        let result = mul(2,10);
+        
+        alert("result: " + result)
+
+        // alert_text("hello");
+        // alert_text("Class");
+        // alert_text(123);
+        // alert_text(123.20);
+
+
+          // function calling
+        // name();
+        // sum();
+        // sum_temp();
+    </script>
+
+
+</body>
+</html>

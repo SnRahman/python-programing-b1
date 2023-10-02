@@ -1,0 +1,112 @@
+p {
+    text-align: justify;
+}
+
+.test {
+    text-align:center;
+}
+
+.last_paragraph {
+    /* text-align-last: center; */
+    text-indent:20% ;
+}
+
+#first_paragraph{
+    color:blueviolet; 
+}
+
+.decoration {
+
+ text-decoration-line: overline;
+ text-decoration-color:red ;
+ text-decoration-style: wavy ;
+ text-decoration-thickness: 1px;   
+}
+
+.decoration1 {
+    text-decoration: overline red dotted 5px;
+}
+
+.transform {
+    text-transform: lowercase;
+}
+
+.spacing {
+    text-indent:10% ;
+    letter-spacing: 10px;
+    line-height: 50px;
+    word-spacing: 100px;
+}
+
+.shadow {
+    /* text-shadow: -2px -10px 5px  blue;/ */
+    text-shadow:px 2px 3 5px  blue ,2px 3px 5px  red ;
+}
+
+#font {
+    font-size: larger;
+    font-weight:900;
+    font-style: italic;
+    font-family:"Cursive";
+}
+
+p {
+    color: red;
+}
+
+p.dotted{
+    color: blue;
+}
+
+#border {
+    border-style:dotted ;
+    border-color: red;
+    border-width: 1px;
+}
+
+#border1 {
+    border: 2px solid blue;
+}
+
+
+/* .margin {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+} */
+
+.margin {
+    margin: 100px 75px 50px 25px;
+    margin: 100px 75px 100px 75px;
+    margin: 100px 75px;
+    margin: 100px;
+
+    /* margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 100px;
+    margin-right: 100px; */
+}
+
+.padding {
+    padding: 100px 75px 50px 25px;
+    padding: 100px 75px;
+    padding: 100px;
+}
+
+.padding {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.margin-padding {
+    padding: 100px 50px;
+    margin: 100px 50px;
+
+}
+
+
+
+
+

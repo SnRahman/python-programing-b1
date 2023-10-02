@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h3>Start Quiz</h3>
+        <button id="start">Start</button>
+    </div>
+
+    <script>
+        let questions = [
+            {
+                question: "What is 2 + 2?",
+                answers: {
+                    ans1: 1,
+                    ans2: 2,
+                    ans3: 3,
+                    ans4: 4,
+                },
+                correct: 4
+            },
+            {
+                question: "What is 2 + 3?",
+                answers: {
+                    ans1: 1,
+                    ans2: 5,
+                    ans3: 3,
+                    ans4: 4,
+                },
+                correct: 5
+            },
+            {
+                question: "What is 4 + 2?",
+                answers: {
+                    ans1: 1,
+                    ans2: 2,
+                    ans3: 6,
+                    ans4: 4,
+                },
+                correct: 6
+            },
+            {
+                question: "What is the capital of Pakistan?",
+                answers: {
+                    ans1: "P",
+                    ans2: "Lahore",
+                    ans3: "Ichra",
+                    ans4: "Islamabad",
+                },
+                correct: "Islamabad"
+            }
+        ];
+
+        
+        start();
+
+        function start(){
+
+            currentQuestionIndex = 0;
+            score = 0;
+
+            let start = document.querySelector('#start');
+
+            start.addEventListener('click', function(){
+                addQuestion();
+            });
+        }
+
+        function addQuestion(){
+            let quizContainer = document.querySelector('.quiz-container');
+
+            quizContainer.innerHTML = `<h3>${questions[currentQuestionIndex].question}</h3>`;
+
+            let answers = questions[currentQuestionIndex].answers;
+
+            for(let key in answers){
+                let button = document.createElement('button');
+                button.innerText = answers[key];
+                button.classList.add('ans');
+                quizContainer.append(button);
+            }
+        checkAns();
+    }
+
+    </script>
+</body>
+</html>

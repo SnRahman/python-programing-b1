@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>  
+
+    <div>
+        <a id="anchor" class="achor" href="#">GOOGLE</a>
+    </div>
+    
+    <button id="btn">Click me</button>
+
+    <div id="myElement">Right-click me!</div>
+
+    <form id="myForm">
+    <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <div id="outerDiv">
+        <div id="innerDiv">
+            <button id="myButton">Click Me</button>
+        </div>
+    </div>
+
+    <button id="test">test</button>
+
+
+<input type="text" name="text" id="text" placeholder="text">
+
+    <script>
+        //class list
+        let anchor = document.getElementById('anchor');
+        anchor.classList.add('anchor1')
+        // anchor.classList.remove('anchor1')
+        anchor.classList.toggle('anchor1')
+
+        //event linster
+        let btn = document.getElementById('btn');
+
+        //with anonymous functions
+        // btn.addEventListener('click',function(){
+        //     console.log('hello world');
+        // });
+
+
+        function display(){
+            console.log('hello world display:');
+        }
+        //click
+        // btn.addEventListener('click',display);
+
+        //mouseour
+        // btn.addEventListener('mouseover',display);
+
+        //mouseout
+        // btn.addEventListener('mouseout',display);
+
+        //focus 
+        let text = document.getElementById('text');
+        text.addEventListener('focus',display);
+
+        //blur
+        text.addEventListener('blur',()=>{
+            console.log('focues is out')
+        });
+
+        //SUBMIT
+
+        let form = document.getElementById('myForm');
+
+        form.addEventListener('submit', (e) =>{
+            console.log('form is prevented to submit');
+            e.preventDefault();
+            console.log(e);
+
+            e.defaultPrevented();
+        } )
+
+
+        //contextmenu
+        var element = document.getElementById("myElement");
+
+        element.addEventListener("contextmenu", function(event) {
+            // Prevent the default context menu
+            // event.preventDefault();
+            
+            // Display a custom context menu
+            showCustomContextMenu(event.clientX, event.clientY);
+        });
+
+        function showCustomContextMenu(x, y) {
+            // Code to display your custom context menu at the specified coordinates
+            // This could be a hidden HTML element that becomes visible or a custom UI
+            console.log("Custom context menu shown at:", x, y);
+        }
+
+
+        //multiple event listner
+        var element = document.getElementById("btn");
+
+        // First event listener
+        element.addEventListener("click", function(event) {
+            console.log("First event listener triggered.");
+        });
+
+        // Second event listener
+        element.addEventListener("mouseover", function(event) {
+            console.log("Second event listener triggered.");
+        });
+
+
+        // remove eventlistner after running once
+
+        element. addEventListener('click', ()=>{
+            console.log('clicked');
+
+            (function() {
+                element.removeEventListener("click", arguments.callee);
+            })();
+        })
+
+        // element.addEventListener('click',show);
+
+        // function show(){
+        //      console.log('clicked');
+        //     element.removeEventListener('click',show)
+
+        // }
+
+        //stope propagation
+        // var button = document.getElementById("btn");
+
+        // button.addEventListener("click", function(event) {
+        //     console.log("Button clicked!");
+        //     event.stopPropagation(); // Stops further bubbling
+        // });
+
+        var outerDiv = document.getElementById("outerDiv");
+        var innerDiv = document.getElementById("innerDiv");
+        var button = document.getElementById("myButton");
+        var test = document.getElementById("test");
+
+        outerDiv.addEventListener("click", function(event) {
+            console.log("Outer div clicked (capturing phase)");
+        },true); // Use capturing phase
+
+        innerDiv.addEventListener("click", function(event) {
+            console.log("Inner div clicked (capturing phase)");
+        },true); // Use capturing phase
+
+        button.addEventListener("click", function(event) {
+            console.log("Button clicked (bubbling phase)");
+            // event.stopPropagation(); // Stop further capturing
+
+        });
+
+        outerDiv.addEventListener("click", function(event) {
+            console.log("Outer div clicked (bubbling phase)");
+        });
+
+        // test.addEventListener("click", function(event) {
+        //     console.log("test clicked (bubbling phase)");
+        // });
+
+
+
+
+    </script>
+</body>
+</html>

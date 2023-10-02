@@ -1,0 +1,12 @@
+.result {
+    border: 1px solid black;
+}
+
+#second_div {
+    border: 5px dotted red;
+}
+
+h1 {
+    /* color: #ff6347; */
+    color: rgb(255, 99, 71);
+}

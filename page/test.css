@@ -1,0 +1,146 @@
+ body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EAEAEA;
+    color: black;
+    padding: 10px 150px;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    position: relative;
+    right: 100px;
+  }
+
+  .nav-item a{
+    /* padding: 10px 15px;
+    border: none;
+    background-color: #555;
+    cursor: pointer;
+    border-radius: 5px; */
+
+    color: black;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .nav-item:hover {
+    background-color: #D9D9D9;
+  }
+
+
+  .section1 {
+    background-color: #D9D9D9;
+    padding: 10px 100px;
+    display: flex;
+    justify-content: space-between;
+    height: 400px;
+
+  }
+
+  .image {
+    padding: 20px 0;
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 40px;
+    width: 400px;
+  }
+
+  .contain-child {
+    text-align: center;
+  }
+
+  .content_btn a {
+    display: inline-flex;
+    text-decoration: none;
+    height: 30px;
+    width: 100px;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+    color: black;
+  }
+
+  .about_us_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+  
+  .about_us {
+    padding: 10px 400px;
+    text-align: center;
+  }
+
+  .about_us h1 {
+    font-weight: 600;
+    font-size: 40px;
+    text-transform: uppercase;
+  }
+
+  .description_container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 150px;
+
+  }
+
+  .description_container_content
+  {
+    padding: 30px 0px;
+    width: 400px;
+  }
+  .description_container_content > div {
+    margin-bottom: 50px;
+  }
+
+  .protfolio {
+    height: 300px;
+    display: flex;
+    padding: 10px 150px;
+    gap: 30px;  
+    margin-bottom: 100px;
+  }
+  h3, p{
+    text-align: center;
+  }
+
+  /* footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
+
+  .footer {
+    background-color: #D9D9D9;
+    padding: 10px 150px;
+    text-align: center;
+    height:200px;
+  }
+
+  .footer-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }

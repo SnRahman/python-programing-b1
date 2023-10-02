@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop</title>
+</head>
+<body>
+    
+    <script>
+        //  console.log('Hello World!');
+        //  console.log('Hello World!');
+        //  console.log('Hello World!');
+        //  console.log('Hello World!');
+        //  console.log('Hello World!');
+        //  console.log('Hello World!');
+        //  console.log('Hello World!');
+        //  console.log('Hello World!');
+        //  console.log('Hello World!');
+        //  console.log('Hello World!');
+        //  console.log('Hello World!');
+
+        // for loop
+        for(let i=0; i<5 ; i++) {
+        //  console.log('Hello World!')
+         document.write('Hello World! <br>');
+        }
+
+        //for loop example
+
+        // for( let j=1; j<=20; j++  ){
+        //     console.log(j);
+        // }
+
+        // for loop with arrays
+
+        let arr = ['Lahore','Karachi','Islamabad','Rawalpindi','Sialkot','Multan','Faisalabad','Bahalwalnagar'];
+        console.log(arr);
+        // console.log(arr[0]);
+        // console.log(arr[1]);
+        // console.log(arr[2]);
+
+        for(let k=0; k<=7 ; k++ ) {
+            // console.log(k)
+            //console.log(arr[k]);
+            // console.log(arr[2]);
+
+        }
+
+
+        //for in loop
+
+        for( let i in arr  ) {
+            // console.log(arr[i]);
+            console.log(i);
+        }
+
+        let obj = {
+            name : 'Ahmad',
+            age : '21',
+            height : '5.8',
+            weiht : '60kg'
+        }
+
+
+        // used mostly for objects
+        // for( let key in obj) {
+        //     console.log(key + ' : ' + obj[key] );
+        // }
+
+
+        // for of 
+
+        for (let l of arr) {
+            console.log(l)
+        }
+
+
+        //while loop
+
+
+
+        let w=0;
+        
+        // while( w<=10 ){
+        //     // console.log('Hello World!.')
+        //     console.log(w);
+        //     w++;
+        // }
+
+
+        let condition = false;
+        let count = 0;
+
+        while(condition == true ) {
+            console.log(count);
+            count++;
+
+            if(count == 5){
+                condition = false;
+            }
+        }
+
+
+
+        //while 
+
+        let x = 5;
+
+        while( x<5 )  {
+            console.log('yes');
+            x++;
+        }
+
+
+        let y = 5;
+
+        // do while
+        do{
+            console.log('yes');
+            y++;
+        }
+        while( y<5 )
+
+
+
+        //foreach 
+
+        let arr1 = [5,6,7,8,9,10];
+
+        // arr1.forEach( function (z) {
+        //     console.log(z)
+        // } )
+
+
+
+        // arr.forEach(
+        //     function(n) {
+        //         console.log(n);
+        //     }
+        //  );
+
+        arr.forEach( function( value, index ) {
+        console.log(index + "----" + value );
+        } )
+
+
+
+
+        
+
+
+
+
+
+
+    </script>
+</body>
+</html>

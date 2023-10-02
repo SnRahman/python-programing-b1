@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Forms and Sections </title>
+</head>
+<body>
+    <h1>Field Set</h1>
+    <form>
+        <fieldset> 
+
+            <legend> Your Address </legend>
+
+            <label for="name">Customer Name</label>
+            <input type="text" name="name" >
+            <br>
+
+            <label for="number">Customer Number</label>
+            <input type="number" name="number " >
+            <br>
+
+            <label for="street">street</label>
+            <input type="text" name="street" >
+            <br>
+        </fieldset>
+
+        <fieldset>
+            <legend> Details </legend>
+
+            <label for="biography">Biography</label>
+            <textarea name="biography" cols="10" rows="3"></textarea>
+            <br>
+            
+            <label for="image">Image</label>
+            <input type="file" name="image">
+            <br>
+    
+            <label for="age_group">Age Group</label>
+            <input type="text" name="age_group" >
+            <br>
+        </fieldset>
+    </form>
+
+    <h1> Datalist </h1>
+
+    <form>
+        <label>Fruits
+            <input type="text" name="fruits" list="dgfdgd" >
+        </label>
+
+        <datalist id="dgfdgd" >
+            <option value="Apple">
+            <option value="Banana">
+            <option value="Grapes">
+        </datalist>
+    </form>
+
+    <h1>output</h1>
+    <output id="result" ></output>
+
+
+    <h1>Label example</h1>
+    <label>Gender
+        <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female
+    </label>
+
+    <hr>
+
+    <h1>Target</h1>
+    <form action="" target="_blank" >
+        <label for="name">Customer Name</label>
+        <input type="text" name="name" >
+        <button type="submit">submit</button>
+    </form>
+    
+    <h1>method</h1>
+    <form action="" method="GET">
+        <label for="email">Customer Email</label>
+        <input type="text" name="email" >
+        <button type="submit">submit</button>
+    </form>
+
+    <hr>
+    <form>
+        <h1>autocomplete</h1>
+        <label for="name">First Name</label>
+        <input type="text" name="name" autocomplete="on">
+
+        <h1>Required</h1>
+        <label for="email">Email</label>
+        <input type="text" name="email" required>
+
+        <button type="submit" > submit</button>
+    </form>
+
+    <h1>novalidate</h1>
+    <form novalidate>
+        <h1>autocomplete</h1>
+        <label for="name">First Name</label>
+        <input type="text" name="name" autocomplete="on">
+
+        <h1>Required</h1>
+        <label for="email">*Email</label>
+        <input type="text" name="email" required>
+
+        <button type="submit" > submit</button>
+    </form>
+
+    <hr>
+
+    <h1>selected</h1>
+    <form action="">
+        <select name="fruits">
+            <option value="Apple">Apple</option>
+            <option value="Banana" >Banana</option>
+            <option value="Grapes" selected>Grapes</option>
+        </select>
+    </form>
+
+    <hr>
+    <h1>Multiple</h1>
+    <form action="">
+        <select name="fruits" multiple>
+            <option value="Apple">Apple</option>
+            <option value="Banana" >Banana</option>
+            <option value="Grapes">Grapes</option>
+        </select>
+        <button type="submit" > submit</button>
+
+    </form>
+
+    <hr>
+    <form>
+        <h1>value</h1>
+        <label for="name">First Name</label>
+        <input type="text" name="name" value="Ahmad">
+
+        <h1>readonly</h1>
+        <label for="name">First Name</label>
+        <input type="text" name="name" value="Ahmad" readonly>
+
+        <h1>disabled</h1>
+        <label for="name">First Name</label>
+        <input type="text" name="name" value="Ahmad" disabled>
+
+        <h1>size</h1>
+        <label for="name">First Name</label>
+        <input type="text" name="name" value="Ahmad" size="5">
+
+        <h1>maxlenght</h1>
+        <label for="name">First Name</label>
+        <input type="text" name="name" value="Ahmad" maxlength="5">
+
+        <h1>max</h1>
+        <label for="name">Age</label>
+        <input type="number" name="name" min="5" max="10">
+
+        <h1>min</h1>
+        <label for="name">Age</label>
+        <input type="number" name="name" min="18">
+
+        <h1>pattern</h1>
+        <label for="name">postal code</label>
+        <input type="text" name="name" pattern="[0-9a-zA-Z]{5}">
+
+        <h1>placeholder</h1>
+        <label for="name">postal code</label>
+        <input type="text" name="name" placeholder="Postal code">
+
+        <h1>step</h1>
+        <label for="name">Product Price</label>
+        <input type="number" name="name" step="0.0001" >
+
+
+        <button type="submit" > submit</button>
+    </form>
+</body>
+</html>

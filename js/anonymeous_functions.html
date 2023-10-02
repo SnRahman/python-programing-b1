@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous Functions</title>
+</head>
+<body>
+    
+    <script>
+        //general function
+        function display() {
+            alert('Hello World!.')
+        }
+
+        // display();
+
+        //anonymous functions
+
+        //1
+        (function () {
+            alert('hello world!.')
+        })();
+
+        //simple example
+        let show = function () {
+            document.write('Hello World!.')
+        }
+
+        // show();
+        // show();
+
+
+        function add(a,b){
+            return a+b;
+        }
+
+        let x = add(10,30);
+        // alert(x);
+
+
+        let sum = function (a,b){
+            alert(a+b);
+        }
+
+        // sum(34,34);
+
+
+        let mul = function (a,b,c){
+            document.write(a*b*c);
+        }
+
+        
+        mul(2,4,5);
+
+        //arrow functions
+        
+        // () => {};
+
+       
+
+        let display1 =  () => 'Hello World!.';
+        let display2 =  () => alert(12.25);
+
+        // display2();
+
+        // alert(display1());
+
+
+
+        let sum1 = (a,b,c) => a+b+c;
+
+            // alert(sum1(10,20,30));
+
+        let square = (x) => x**2 ; 
+
+        document.write(square(5));
+        document.write("<hr>");
+        document.write(square(100));
+
+        //addition simple expample
+        function addition1(a,b,c){
+        return a+b+c;
+        }
+
+        //addition/ arrow function as parameter
+        function addition(add,a,b)
+        {
+            return add(a,b);
+        }
+
+        let resutl = addition( (a,b) => a+b ,10,20);
+        // let resutl = addition( (a,b) => a-b ,10,20);
+        // let resutl = addition( (a,b) => a-b ,10,20);
+        // alert(resutl);
+
+
+        //simple square function
+        function cal_square(x) {
+            return x**3;
+        }
+
+        // alert(cal_square(4));
+
+        //square function using arrow as parameters.
+
+        function cal_sqaure1(x,square){
+            return square(x);
+        }
+
+        let result1 = cal_sqaure1(125, (x) => x**2 );
+        // alert(result1);
+
+        let result2 = cal_sqaure1(5, (x) => x**3 );
+        // alert(result2);
+
+
+        //if else conditions in arrow functions
+
+        //  let test =   () => {}
+
+
+        //simple function with if else if conditions
+        function check_number(x){
+            if(x>0){
+                return 'Positive Number';
+            } else if(x<0){
+                return 'Negative Number';
+            } else {
+                return 'Number is zero';
+            }
+        } 
+
+        let a = check_number("-253");
+        // alert(a);
+
+        //arrow function with if else if conditions
+
+        let b = (x) => { 
+            if(x>0){
+                return 'Positive Number';
+            } else if(x<0){
+                return 'Negative Number';
+            } else {
+                return 'Number is zero';
+            } 
+        }
+
+        // alert(b(145));
+
+        let c = (x) => x>0  ? "Positive number" : "Negative number";
+
+        // if(x>0) {
+        //     "Positive number"
+        // } else 
+        // {
+        //     "Negative number";
+        // }
+        alert(c(-145));
+      
+
+        // addition1(12,20,30);
+
+
+            // alert(display1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

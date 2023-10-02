@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validations</title>
+    <style>
+        .error_msg {
+            color :red;
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Task</h1>
+        <p>JavaScript Form Task
+            create a form with a dropdown menu for selecting a country. 
+            depending on the selected country, dynamically show or hide fields that are 
+            specific to that country's address format. For example, if "United States" is selected, 
+            show fields for state and ZIP code; if "Canada" is selected, show fields for province 
+            and postal code.
+        </p>
+    </div>
+
+
+    <form action="#" id="form">
+        <h1>Sign up</h1>
+        <label for="first_name">First Name </label>
+        <input type="text" name="first_name" id="first_name">
+        <span class="error_msg" id="first_name_error"></span>
+        <br>
+
+        <label for="last_name">Last Name</label>
+        <input type="text" name="last_name" id="last_name">
+        <span class="error_msg" id="last_name_error"></span>
+        <br>
+
+        <label for="age">Age</label>
+        <input type="number" name="age"  id="age">
+        <span class="error_msg" id="age_error"></span>
+
+        <br>
+
+        <label for="phone">Phone Number</label>
+        <input type="number" name="phone" id="phone">
+        <span class="error_msg" id="phone_error"></span>
+        <br>
+
+        <label for="email">Emai</label>
+        <input type="text" name="email" id="email">
+        <span class="error_msg" id="email_error"></span>
+        <br>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+        <span class="error_msg" id="password_error"></span>
+        <br>
+
+        <label for="confirm_password">Confirm Password</label>
+        <input type="password" name="confirm_password" id="confirm_password">
+        <span class="error_msg" id="confirm_password_error"></span>
+
+        <br>
+
+        <label for="experience">Experience
+            <input type="radio" name="experience" value="fresher" id="fresher">Fresher
+            <input type="radio" name="experience" value="experienced" id="experienced">Experienced
+        </label>
+        <br>
+
+        <div id="edu_div" style="display: none;">
+            <label for="edu_details">Education Details
+                <input type="text" name="edu_details">
+            </label>
+            <br>
+        </div>
+        
+
+        <div id="exp_div" style="display: none;">
+            <label for="exp_years">Experinece in years</label>
+            <input type="text" name="exp_years">
+            <br>
+        </div>
+       
+        <button type="submit"> Submit</button>
+        </label>
+    </form>
+
+
+    <script>
+
+        let form = document.getElementById('form')
+        form.addEventListener('submit',function(e) {
+
+            let first_name = document.getElementById('first_name').value
+
+            if(first_name == '') {
+                document.getElementById('first_name_error').innerText = 'First Name required.';
+                // return false
+            } else {
+                document.getElementById('first_name_error').innerText = '';
+            }
+
+            let last_name = document.getElementById('last_name').value
+            if(last_name == '') {
+                document.getElementById('last_name_error').innerText = 'Last Name required.';
+            }else {
+                document.getElementById('last_name_error').innerText = '';
+            }
+
+            let age = document.getElementById('age').value
+            // console.log(typeof  parseInt(age));
+            
+            if(age <3 || age >25) {
+                document.getElementById('age_error').innerText = 'Age is required and should be between 3 - 25 years';
+            }else {
+                document.getElementById('age_error').innerText = '';
+            }
+
+            let phone = document.getElementById('phone').value
+            if(phone.length != 11) {
+                document.getElementById('phone_error').innerText = 'Phone Number should be of 11 digits.';
+            }else {
+                document.getElementById('phone_error').innerText = '';
+            }
+
+            let email = document.getElementById('email').value
+            if( !email.includes('@') || !email.includes('.')) {
+                document.getElementById('email_error').innerText = 'kindly enter a proper email.';
+            }else {
+                document.getElementById('email_error').innerText = '';
+            }
+
+            let password = document.getElementById('password').value
+            if( password.length < 8) {
+                document.getElementById('password_error').innerText = 'password should be of 8 characters';
+            }else {
+                document.getElementById('password_error').innerText = '';
+            }
+
+            let confirm_password = document.getElementById('confirm_password').value
+            if( confirm_password == '' || password != confirm_password ) {
+                document.getElementById('confirm_password_error').innerText = 'Password doesn"t match';
+            }else {
+                document.getElementById('confirm_password_error').innerText = '';
+            }
+
+            e.preventDefault()
+           
+        })
+
+          // hide the div elements on page load
+        // let edu_div = document.getElementById('edu_div');
+        // edu_div.style.display = 'none';
+
+        // let exp_div = document.getElementById('exp_div');
+        // exp_div.style.display = 'none';
+        
+        // click event on fresher
+        let fresher = document.getElementById('fresher')
+        fresher.addEventListener('click', function(){
+            edu_div.style.display ="block";
+            exp_div.style.display = 'none';
+        })
+
+        let experienced = document.getElementById('experienced')
+        experienced.addEventListener('click', function(){
+            edu_div.style.display ="none";
+            exp_div.style.display = 'block';
+        })
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Html Sections</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- <style>
+        .result {
+            border: 1px solid black;
+        }
+    
+        #second_div {
+            border: 5px dotted red;
+        }
+
+        h1 {
+            color: red;
+        }
+
+    </style> -->
+</head>
+<body>
+    <h1>Div</h1>
+    <div id="first_div" class="result">
+        <h1><a href="#" >PHP</a></h1>
+        <p>This is php technology. used of web development</p>
+    </div>
+    <hr>
+
+    <div id="second_div">
+        <h1><a href="#" >Python</a></h1>
+        <p>This is Python technology. used of web development</p>
+    </div>
+
+    <h1 style="color: blueviolet; " >nav</h1>
+    <nav>
+        <ul>
+            <li>Tutorials</li>
+            <li>Excercies</li>
+            <li>Get certified</li>
+            <li>Services</li>
+        </ul>
+    </nav>
+
+    <h1>header</h1>
+    <header>
+        <nav>
+            <ul>
+                <li>Tutorials</li>
+                <li>Excercies</li>
+                <li>Get certified</li>
+                <li>Services</li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <h1>footer</h1>
+    <footer>
+        <ul>
+            <li>Tutorials</li>
+            <li>Excercies</li>
+            <li>Get certified</li>
+            <li>Services</li>
+        </ul>
+    </footer>
+
+    <h1>atricle</h1>
+    <article>
+        <h1><a href="#" >PHP</a></h1>
+        <p>This is php technology. used of web development</p>
+    </article>
+
+    <h1>section</h1>
+
+    <section class="blogs">
+        <article id="first_div" class="result">
+            <h1><a href="#" >PHP</a></h1>
+            <p>This is php technology. used of web development</p>
+        </article>
+        <hr>
+        <article id="second_div">
+            <h1><a href="#" >Python</a></h1>
+            <p>This is Python technology. used of web development</p>
+        </article>
+    </section>
+
+    <h1>aside</h1>
+    <aside>
+        <h1>related Product</h1>
+        <div>
+            <h1> Sprite </h1>
+            <h4> RS.50 </h4>
+            <button > add to cart </button>
+        </div>
+    </aside>
+
+    <h1>main</h1>
+    <main>
+        <section class="blogs">
+            <article id="first_div" class="result">
+                <h1><a href="#" >PHP</a></h1>
+                <p>This is php technology. used of web development</p>
+            </article>
+            <hr>
+            <article id="second_div">
+                <h1><a href="#" >Python</a></h1>
+                <p>This is Python technology. used of web development</p>
+            </article>
+        </section>
+
+        <section class="products">
+            <div id="first_div" class="result">
+                <h1><a href="#" >PHP</a></h1>
+                <p>This is php technology. used of web development</p>
+            </div>
+            <hr>
+            <div id="second_div">
+                <h1><a href="#" >Python</a></h1>
+                <p>This is Python technology. used of web development</p>
+            </div>
+        </section>
+    </main>
+
+    <h1>details</h1>
+    <details>
+        <summary>How do I do this?</summary>
+        <p>This is php technology. used of web development. This is php technology. used of web development. This is php technology. used of web development.This is php technology. used of web development.This is php technology. used of web development.This is php technology. used of web development.This is php technology. used of web development. </p>
+    </details>
+
+    <h1>figure</h1>
+    <figure>
+        <img src="https://www.educ  ative.io/v2api/editorpage/5984239968321536/image/5203686436372480" alt="python">
+        <figcaption>Python Web Development</figcaption>
+    </figure>
+
+
+    <main>
+        <h1>CSS Types</h1>
+        <ul>
+            <li style="color: aquamarine;" >using attribure - style - inline styling</li>
+            <li>using tag - style  - in page</li>
+            <li>external</li>
+        </ul>
+    </main>
+   
+</body>
+</html>

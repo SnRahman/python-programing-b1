@@ -1,0 +1,15 @@
+1- initialize git in new project
+git init
+
+2- get status of repository
+git status
+
+3- add new file in git
+git add {filename}
+
+4- add all files in git 
+git add .
+
+5- commit new changes
+git commit -m "{message}"
+

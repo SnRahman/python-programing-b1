@@ -1,0 +1,105 @@
+.static {
+    /* background-color: aqua; */
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    position: static;
+    left:100px;
+    top:100px;
+}
+
+.relative {
+    position: relative;
+    margin-top: 10px;
+    border:1px solid blue;
+    height: 50px;
+    width: 50px;
+    left: 50px;
+    top: 50px;
+}
+
+.parent-relative {
+    position: relative;
+    margin-top: 100px;
+    border:1px solid blue;
+    height: 500px;
+    width: 500px;
+    /* top: 100px; */
+    left:300px;
+}
+
+.child-absolute {
+    position: absolute;
+    border:1px solid red;
+    height: 50px;
+    width: 50px;
+
+    /* left: 50px; */
+    bottom: 50px;
+    right: 10px;
+    /* left: 60px; */
+    /* left: 500px; */
+}
+
+.fixed {
+    position: fixed;
+    left:100px;
+    top:100px;
+
+    border:1px solid green;
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+}
+
+.sticky {
+    position: sticky;
+    border:1px solid sienna;
+    height: 50px;
+    width: 50px;
+    top: 0  ;
+}
+
+.z-1 {
+    position: relative;
+    border:1px solid sienna;
+    background-color: aqua;
+    height: 500px;
+    width: 500px;
+    z-index: 1;
+}
+
+.z-2 {
+    top: -200px;
+    position: relative;
+    border:1px solid sienna;
+    background-color: red;
+    height: 100px;
+    width: 100px;
+    z-index: 2;
+}
+
+.z-3 {
+    top: -300px;
+    position: relative;
+    border:1px solid sienna;
+    background-color: blue;
+    height: 50px;
+    width: 50px;
+    z-index: 10;
+}
+
+.block {
+    display: inline;
+}
+.inline {
+    display: block;
+}
+
+.display-div {
+    /* display: none; */
+    visibility: hidden;
+}
+
+
+

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        .color{
+            color: red;
+        }
+
+        .background {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading" class="heading1">This is Heading.</h1>
+
+    <button id="btn">
+        click
+    </button>
+
+    <button id="mouse_over">
+        Mouse Over
+    </button>
+
+    <button id="mouse_out">
+        Mouse Out
+    </button>
+
+    <button id="menu">
+        Menu Context
+    </button>
+
+    <form action="" id="form">
+        <input type="text" name="text" placeholder="text" id="text">
+        <input type="text" name="email" placeholder="email" id="email">
+        <button type="submit">Submit</button>
+    </form>
+
+    <button id="multiple">
+        Multiple
+    </button>
+
+    <button id="once">
+        Once
+    </button>
+
+    <div id="outer_div">
+        <div id="inner_div">
+            <button id="div_btn"> div Button</button>
+        </div>
+    </div>
+
+
+</body>
+
+<script>
+
+    //add new classes
+    let heading = document.getElementById('heading');
+
+    heading.classList.add('color');
+    heading.classList.add('background');
+
+
+    //remove class
+    let heading1 = document.getElementById('heading');
+    heading.classList.remove('color'); 
+
+    //toggle classes in elemement
+    heading.classList.toggle('heading1');
+    console.log(heading);
+
+    //create event
+
+    let btn = document.getElementById('btn');
+    //click
+
+
+    btn.addEventListener('click', function(){
+        console.log('clicked');
+    })
+
+    //mouseover
+    let mouse_over = document.getElementById('mouse_over');
+    // console.log(mouse_over);
+
+    mouse_over.addEventListener('mouseover',function(){
+        console.log('shown on mouse over.');
+    });
+
+    //mouseout
+    let mouse_out = document.getElementById('mouse_out');
+
+    mouse_out.addEventListener('mouseout',function(){
+        console.log('shown on mouse out.');
+    });
+
+
+    //focus
+
+    let focus = document.getElementById('text');
+
+    focus.addEventListener('focus' ,function(){
+        console.log('Element is focused.');
+    });
+
+    //blur
+    let blur = document.getElementById('email');
+
+    blur.addEventListener('blur',function(){
+        console.log('Element is out of focused.');
+    });
+
+    //contextmenu
+
+    let menu = document.getElementById('menu');
+
+    menu.addEventListener('contextmenu',display)
+
+
+    function display(e){
+        // hault the default behavour of the element/ object
+        e.preventDefault();
+        // console.log(e);
+        console.log('display function.')
+    }
+
+    //submit
+    let form = document.getElementById('form');
+
+    form.addEventListener('submit',function(e){
+        e.preventDefault();
+        
+        console.log('form is submited')
+    })
+
+    //use multiple events on single element
+
+    let element = document.getElementById('multiple');
+    
+    element.addEventListener('click',function(){
+        element.innerText = 'Changed on Clicked'
+        console.log(element.innerText)
+    })
+
+    element.addEventListener('mouseout',function(){
+        element.innerText = 'Multiple'
+    })
+
+    //run event listne once
+
+    let once = document.getElementById('once');
+
+    once.addEventListener('click',show)
+
+    function show(){
+        console.log('clicked');
+
+        once.removeEventListener('click',show);
+    }
+
+
+    let outer_div = document.getElementById('outer_div');
+    let inner_div = document.getElementById('inner_div');
+    let div_btn = document.getElementById('div_btn');
+
+    outer_div.addEventListener('click',function(){
+        console.log('this is outer div (caputring)');
+    },true)
+
+    inner_div.addEventListener('click',function(e){
+        console.log('this is Inner div (caputring)');
+    },true);
+
+    div_btn.addEventListener('click',function(e){
+        console.log('button clicked');
+        e.stopPropagation();
+    })
+
+    outer_div.addEventListener('click',function(){
+        console.log('this is outer div (bubling)');
+    })
+
+    inner_div.addEventListener('click',function(){
+        console.log('this is Inner div (bubling)');
+    });
+
+
+    // console.log(btn)
+
+
+</script>
+</html>

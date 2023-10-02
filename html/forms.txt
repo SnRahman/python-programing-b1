@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>forms</title>
+</head>
+<body>
+    
+    <h1>Forms</h1>
+    <form method="GET">
+        <!-- Label -->
+        <lable for="name">Name:</lable>
+
+        <!-- text input -->
+        <input type="text" name="name" placeholder="Enter Your Name" >
+
+        <hr>
+
+        <label for="gender">Gender</label>
+        <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female
+
+        <hr>
+        <label for="">checkbox</label>
+        <input type="checkbox" name="language" value="urdu">Urdu
+        <input type="checkbox" name="language" value="english">english
+        <!-- <input> -->
+
+        <!-- input type date -->
+        <hr>
+        <label for="dob">DOB</label>
+        <input type="date" name="dob" >
+        <hr>
+
+        <!-- input type number-->
+        <label for="phone">Phone number</label>
+        <input type="number" name="phone">
+        <hr>
+
+
+        <!-- text area -->
+        <label for="details">More Details</label>
+        <textarea name="details" rows="10" cols="50">
+
+        </textarea>
+        
+        <hr>
+        <label for="courses">Course</label>
+        <select name="courses">
+            <option value="">please select</option>
+            <option value="python" >Python</option>
+            <option value="marketing">Digital marketing</option>
+            <option value="Computer">Advance Computer</option>
+        </select> 
+        <hr>
+
+
+        <label for="city">City</label>
+        <select name="city">
+            <optgroup label="Balochistan">
+                <option value="quetta">Quetta</option>
+            </optgroup>
+
+            <optgroup label="punjab">
+                <option value="lahor" >Lahore</option>
+                <option value="sialkot">Sialkot</option>
+                <option value="faisalabad">Faisalabad</option>
+            </optgroup>
+
+            <optgroup label="Sindh">
+                <option value="karachi" >Karachi</option>
+            </optgroup>
+            
+        </select>
+        
+        <hr>
+
+        <input type="button" value="Order Now">
+        <input type="submit" value="Order">
+        
+        <hr>
+
+        <button type="button"> Pay Now </button>
+        <button type="submit"> Pay Now </button>
+    </form>
+
+</body>
+</html>

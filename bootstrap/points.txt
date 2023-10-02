@@ -1,0 +1,89 @@
+Containers and Breakpoints.
+.container
+.container-sm
+.container-md
+.container-lg
+.container-xl
+.container-xxl
+.container-fluid
+Columns.
+.col-
+.col-sm-
+.col-md-
+.col-lg-
+.col-xl-
+.col-xxl-
+Rows.
+.row-	
+.row-cols-
+.row-cols--sm-
+.row-cols--md-
+.row-cols--lg-
+.row-cols--xl-
+.row-cols--xxl-
+.g-
+.gx-
+.gy-
+Typography.
+Heading classes (.h1, .h2, .h3, .h4, .h5, and .h6).
+Display classes (.display-1, .display-2, .display-3, .display-4, .display-5, and .display-6).
+Text alignment (.text-start, .text-center, .text-end).
+Others (.lead, .text-muted, .small, .mark, etc.).
+Tables.
+.table
+.table-{colour}
+.table-striped
+.table-hover
+.table-responsive
+Forms.
+.form-control
+.form-select
+.form-control-color
+.form-check
+.form-check-input
+.form-check-label
+.form-switch
+.input-group
+.input-group-text
+Buttons.
+.btn
+.btn-{colour}
+.btn-outline-{colour}
+Alerts.
+.alert 
+.alert-{colour}
+.alert-link
+Cards.
+.card
+.card-header
+.card-body
+.card-title
+.card-text
+.card-footer
+Modals.
+.modal
+.modal-dialog
+.modal-content
+.modal-header
+.modal-body
+.modal-footer
+Navbars.
+Color Utilities.
+.bg-{colour}
+.text-{colour}
+.text-bg-{colour}
+Border Utilities.
+.border
+.border-{colour}
+.border-{side}
+.rounded
+Display Utilities.
+.d-none
+.d-block
+.d-{breakpoint}-none
+.d-{breakpoint}-block
+Spacing Utilities.
+.m-
+.m{side}-
+.p-
+.p{side}-
