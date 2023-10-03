@@ -27,7 +27,7 @@ class Mul(Sum):
 class Sub(Sum):
     def div(self):
         print(f"Division is : { self.a /self.b}")
-
+    
 
 
 
