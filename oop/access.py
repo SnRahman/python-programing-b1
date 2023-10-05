@@ -79,7 +79,9 @@ class Vehicle:
 
 class Honda(Vehicle):
     def __init__(self,c,m):
+
         Vehicle.__init__(self,c,m,"Honda")
+        # super().__init__(self,c,m,"Honda")
 
     def display_self(self):
         print(f'Color is: {self._color}')
