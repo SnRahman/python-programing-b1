@@ -48,9 +48,7 @@
         member = Member.objects.get(id=1)
         member = Member.objects.get(pk=1)
 
-        member = Member.objects.get( Q(first_name='Shahzda') | Q(last_name='Nouman'))
-
-
+        member = Member.objects.get( Q(first_name='Saad') | Q(last_name='Ahmad'))
     c- update 
 
         instance = YourModel.objects.get(pk=1)
