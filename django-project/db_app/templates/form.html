@@ -25,7 +25,10 @@
     </nav>
     <div class="container">
         <h1 class="mt-4 text-center ">Add New User</h1>
-        <form class="needs-validation mt-5" action="/db/register" method="POST" novalidate>
+        <!-- <form class="needs-validation mt-5" action="/db/register" method="POST" novalidate> -->
+    <form class="needs-validation mt-5" action="{% url 'register_student' %}" method="POST" novalidate>
+            {% csrf_token %}
+            
             <div class="row">
             <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
@@ -56,13 +59,13 @@
             </div>
             </div> -->
 
-            <!-- <div class="mb-3">
-            <label for="email">Email <span class="text-muted">(Optional)</span></label>
+            <div class="mb-3">
+            <label for="email">Email</label>
             <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
             <div class="invalid-feedback">
                 Please enter a valid email address for shipping updates.
             </div>
-            </div> -->
+            </div> 
             <button class="btn btn-primary" type="submit">Submit</button>
         </form>
     </div>

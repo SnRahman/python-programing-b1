@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Student
+from .forms.MyForm import StudentForm
 
 # Create your views here.
 
@@ -38,3 +39,41 @@ def delete(request,id):
     student.delete()
 
     return HttpResponse('data is deleted')
+
+
+def create_student(request):
+    return render(request,'form.html')
+
+
+def register(request):
+    if request.method == 'POST':
+        first_name = request.POST.get('fname')
+        last_name = request.POST.get('lname')
+        email = request.POST.get('email')
+
+        if first_name and last_name and email:
+            
+            student = Student(first_name = first_name, last_name=last_name,email=email)
+            student.save()
+
+            return HttpResponse('form is submited')
+        else:
+            return HttpResponse('Enter The valid inputs') 
+    else:
+        return HttpResponse('Method not allowed')
+
+
+def django_form(request):
+    if request.method == "POST":
+        form = StudentForm(request.POST)
+        
+        if form.is_valid():
+            f_name = form.cleaned_data['f_name']
+            l_name = form.cleaned_data['l_name']
+            email = form.cleaned_data['email']
+            student = Student(first_name = f_name, last_name=l_name,email=email)
+            student.save()
+        return HttpResponse('form is submitted')
+    else:
+        form = StudentForm()
+        return render(request,'django-form.html',{'form':form})
