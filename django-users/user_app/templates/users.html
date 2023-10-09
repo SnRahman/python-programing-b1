@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Users</title>
+    <style>
+        .heading {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'users' %}">Database</a>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href=" {% url 'users' %}">Users</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href=" {% url 'create' %}">Add User</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="heading">
+            <h1>Users</h1>
+            <div>
+                <a class="btn btn-primary" href="/add-user"> Add User</a>
+            </div>
+        </div>
+        
+        <table class="table table-striped ">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                    <tr>
+                        <td> {{ student.id }} </td>
+                        <td> {{ student.first_name }} </td>
+                        <td> {{ student.last_name }} </td>
+                        <td> {{ student.email }} </td>
+                        <!-- <td> <a href="users/update-users/{{student.id}}"><i class="fa-solid fa-square-pen"></i></a> <a href="/delete-user/{{ student.id }}" style="color:red"><i class="fa-sharp fa-solid fa-trash"></i></a> </td> -->
+                        <td> <a href="{% url 'update' id=student.id %}"><i class="fa-solid fa-square-pen"></i></a> <a href=" {% url 'delete' id=student.id %}" style="color:red"><i class="fa-sharp fa-solid fa-trash"></i></a> </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
