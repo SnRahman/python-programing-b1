@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'user_app'
+    'user_app',
+    # 'employees'
 ]
 
 MIDDLEWARE = [
@@ -69,6 +70,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'django_users.wsgi.application'
+MESSAGE_STORAGE = 'django.contrib.messages.storage.fallback.FallbackStorage'
 
 
 # Database
@@ -118,7 +120,24 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+MEDIA_ROOT = BASE_DIR /"media"
+MEDIA_URL = "/media/"
+
+USERS_MEDIA_ROOT = BASE_DIR /'user_app/media'
+USERS_MEDIA_URL = "/user_app/media/"
+
+
+STATICfILES_DIRS = [
+    BASE_DIR /"user_app/static"
+]
+
+# STATIC_ROOT = BASE_DIR /'assets'
+
+# STATIC_ROOT = os.join.path(BASE_DIR,'assets')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+

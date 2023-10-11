@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.http import HttpResponse
 from .forms.users_form import StudentForm
 from .models import Student
@@ -14,17 +15,21 @@ def create(request):
         form = StudentForm()
         return render(request,'form.html',{'form':form})
     else:
-        form = StudentForm(request.POST)
+        form = StudentForm(request.POST,request.FILES)
         if form.is_valid():
             first_name = form.cleaned_data['first_name']
             last_name = form.cleaned_data['last_name']
             email = form.cleaned_data['email']
-            student = Student(first_name = first_name, last_name= last_name, email=email )
+            image = form.cleaned_data['file']
+            student = Student(first_name = first_name, last_name= last_name, email=email, image = image)
             student.save()
-
             return redirect('users')
         else:
             # return HttpResponse('errors')
+            for field_name, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"Error in {form.fields[field_name].label}: {error}")
+
             return redirect('create')
 
 

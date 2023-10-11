@@ -46,8 +46,8 @@
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
+                    <th>IMAGE</th>
                     <th>Action</th>
-
                 </tr>
             </thead>
             <tbody>
@@ -57,6 +57,7 @@
                         <td> {{ student.first_name }} </td>
                         <td> {{ student.last_name }} </td>
                         <td> {{ student.email }} </td>
+                        <td> <img src="../media/{{ student.image }}" alt="{{ student.image }}">  </td>
                         <!-- <td> <a href="users/update-users/{{student.id}}"><i class="fa-solid fa-square-pen"></i></a> <a href="/delete-user/{{ student.id }}" style="color:red"><i class="fa-sharp fa-solid fa-trash"></i></a> </td> -->
                         <td> <a href="{% url 'update' id=student.id %}"><i class="fa-solid fa-square-pen"></i></a> <a href=" {% url 'delete' id=student.id %}" style="color:red"><i class="fa-sharp fa-solid fa-trash"></i></a> </td>
                     </tr>

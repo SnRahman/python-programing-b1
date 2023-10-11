@@ -7,4 +7,4 @@ urlpatterns = [
     path('update-user/<int:id>/',views.update, name='update'),
     path('delete-student/<int:id>/',views.delete, name='delete')
 
-]
+] 
