@@ -23,6 +23,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('user_app.urls')),
+    path('onc/',include('onc_app.urls'))
 ]  + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
 # static(settings.USERS_MEDIA_URL,document_root=settings.USERS_MEDIA_ROOT)

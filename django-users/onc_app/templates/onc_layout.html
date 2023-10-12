@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- theme developed by zahid hussain whatsapp: +923025788489 -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>unlockcancer.com</title>
+        <meta name="author" content="zahid hussain whatsapp: +923025788489">
+        <link rel="icon" href=" {% static 'onc_app/image/favicon.png' %}" type="image/x-icon">
+        <link rel="shortcut icon" href="{% static 'onc_app/image/favicon.png' %}"
+            type="image/x-icon">
+        <!-- font awesome -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css"
+            integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href=" {% static 'onc_app/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href=" {% static 'onc_app/css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'onc_app/css/responsive.css' %}">
+    </head>
+    <body class="bg-color-secondary">
+        {% include '_navbar.html'  %}
+        <!-- section Tabs-->
+        {% block content %}
+
+        {% endblock %}
+        <!-- section end-->
+
+        <!-- footer -->
+        {% include '_footer.html' %}
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/fontawesome.min.js"
+            integrity="sha512-64O4TSvYybbO2u06YzKDmZfLj/Tcr9+oorWhxzE3yDnmBRf7wvDgQweCzUf5pm2xYTgHMMyk5tW8kWU92JENng=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+            integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="{% static 'onc_app/js/jquery.js' %}"></script>
+        <script src=" {% static 'onc_app/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script>
+           
+            const container = document.querySelector('#feedback');
+            function createBubble() {
+                const bubble = document.createElement('div');
+                bubble.className = 'bubble';
+                const size = Math.floor(Math.random() * 30) + 10;
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                const positionX = Math.random() * 100;
+                bubble.style.left = `${positionX}%`;
+                container.appendChild(bubble);
+                bubble.addEventListener('animationiteration', () => {
+                    container.removeChild(bubble);
+                });
+            }
+            setInterval(createBubble, 700);
+        </script>
+        <script src="{% static 'onc_app/js/custom.js' %}"></script>
+
+    </body>
+</html>

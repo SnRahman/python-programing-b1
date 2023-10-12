@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'user_app',
+    'onc_app'
     # 'employees'
 ]
 
@@ -126,10 +127,11 @@ MEDIA_URL = "/media/"
 USERS_MEDIA_ROOT = BASE_DIR /'user_app/media'
 USERS_MEDIA_URL = "/user_app/media/"
 
-
-STATICfILES_DIRS = [
-    BASE_DIR /"user_app/static"
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    "/var/www/static/",
 ]
+
 
 # STATIC_ROOT = BASE_DIR /'assets'
 

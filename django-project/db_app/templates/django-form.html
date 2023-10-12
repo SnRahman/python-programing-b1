@@ -6,7 +6,7 @@
     <title>Form</title>
 </head>
 <body>
-    <form method="post" action="{% url 'django-form' %}">
+    <form method="POST" action="{% url 'django-form' %}">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Submit">

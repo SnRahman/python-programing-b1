@@ -1,0 +1,100 @@
+{% load static %}
+
+<nav class="navbar bg-body-blue fixed-top">
+    <div class="container-fluid px-5">
+        <div class="flex left_col">
+
+            <button class="navbar-toggler border-0 text-white "
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar"
+                aria-label="Toggle navigation">
+                <span class><i class="fa-solid fa-bars-staggered fs-3"></i></span>
+            </button>
+            <a class="left_logo d-none" href="#"><img
+                    src=" {% static 'onc_app/image/Unlock.png' %}" alt="logo"
+                    class="img-fluid logo_brand_mini"></a>
+        </div>
+        <div class="my-1 search-bar-div center_col">
+
+            <a class="center_logo" href="#"><img
+                    src="{% static 'onc_app/image/Unlock.png' %}" alt="logo"
+                    class="img-fluid logo_brand mb-2"></a>
+            <div class="input-group input-group-lg border rounded-pill header_search_bar">
+                <div class="input-group-prepend input-group-lg border-0">
+                    <button id="button-addon4" type="button"
+                        class="btn btn-link text-info"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <input type="search"
+                    placeholder="Search “QT interval” or “QT” or “EKG”"
+                    aria-describedby="button-addon4"
+                    class="form-control search-bar bg-none border-0">
+            </div>
+        </div>
+        <div class="right_col">
+            <a class="text-white" href="#"><i
+                    class="fa-solid fa-bell fs-3"></i></a>
+        </div>
+        <div class="offcanvas offcanvas-start" tabindex="-1"
+            id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">UnlockCancer</h5>
+                <button type="button" class="btn-close"
+                    data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul
+                    class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"
+                            href="{% url 'index' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About
+                            Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#"
+                            role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Algorithms
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Breast
+                                    Cancer</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">GI
+                                    Cancer</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">GU
+                                    Cancer</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Hematology</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Lung
+                                    Cancer</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">All</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>

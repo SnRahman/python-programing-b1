@@ -1,0 +1,170 @@
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .filter_char {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    .logo_brand_mini {
+        width: 130px;
+    }
+
+    .circle-icon {
+        right: 0;
+        bottom: -60px;
+        z-index: 1;
+        width: 140px;
+    }
+
+    .form-padd {
+        padding: 0 0rem;
+    }
+
+    .phone-mockup {
+        max-width: 100%;
+    }
+
+    .hero_sec__heading {
+        font-size: 34px;
+        line-height: 42px;
+        z-index: 1;
+        position: relative;
+    }
+
+    .px-5 {
+        padding-right: 1rem !important;
+        padding-left: 1rem !important;
+    }
+
+    .bitcoin-icon {
+        height: 170px;
+    }
+
+    .card-h {
+        height: auto;
+    }
+
+    .service_card {
+        margin-bottom: 1rem;
+    }
+
+    #howToTrade {
+        height: auto;
+    }
+
+    #users-say .card {
+        margin-bottom: 1rem;
+
+    }
+
+    .form-card {
+        padding: 1rem !important;
+
+    }
+    .walletwithcash {
+        object-fit: contain;
+        width: 120px;
+    }
+    .about_us_heading {
+        font-size: 33px;
+        line-height: 38px;
+    }
+
+}
+@media screen and (max-width:767px) {
+    .filter_char {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    .logo_brand {
+        width: 120px;
+    margin-bottom: 0 !important;
+    }
+    .header_search_bar {
+        display: none; /* Hide the header search bar */
+    }
+    .mobile_search_bar {
+        display: block; /* Display the mobile search bar */
+    }
+    .tabs_sec {
+        margin-top: 4rem!important;
+    }
+    .content_list p{
+        width: 90%;
+        height: 1.2em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+
+    /* unlock caner end */
+    .circle-icon {
+        right: 0;
+        bottom: -60px;
+        z-index: 1;
+        width: 140px;
+    }
+
+    .form-padd {
+        padding: 0 0rem;
+    }
+
+    .phone-mockup {
+        max-width: 100%;
+    }
+
+    .hero_sec__heading {
+        font-size: 34px;
+        line-height: 42px;
+        z-index: 1;
+        position: relative;
+    }
+
+    .px-5 {
+        padding-right: 1rem !important;
+        padding-left: 1rem !important;
+    }
+
+    .bitcoin-icon {
+        height: 170px;
+    }
+
+    .card-h {
+        height: auto;
+    }
+
+    .service_card {
+        margin-bottom: 1rem;
+    }
+
+    #howToTrade {
+        height: auto;
+    }
+
+    #users-say .card {
+        margin-bottom: 1rem;
+
+    }
+
+    .form-card {
+        padding: 1rem !important;
+
+    }
+    .walletwithcash {
+        object-fit: contain;
+        width: 120px;
+    }
+    .about_us_heading {
+        font-size: 33px;
+        line-height: 38px;
+    }
+    .p-5 {
+        padding: 1.5rem!important;
+    }
+    .py-5 {
+        padding-top: 2rem!important;
+        padding-bottom: 2rem!important;
+    }
+}

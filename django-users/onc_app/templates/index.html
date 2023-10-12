@@ -1,0 +1,786 @@
+{% extends 'onc_layout.html' %}
+{% load static %}
+{% block content %}
+    <section class="tabs_sec py-5">
+        <div class="container">
+            <div class="mobile_search_bar mb-2">
+                <div class="input-group input-group-lg border rounded-pill ">
+                    <div class="input-group-prepend input-group-lg border-0">
+                        <button id="button-addon4" type="button"
+                            class="btn btn-link text-info"><i
+                                class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                    <input type="search"
+                        placeholder="Search “QT interval” or “QT” or “EKG”"
+                        aria-describedby="button-addon4"
+                        class="form-control search-bar bg-none border-0">
+                </div>
+            </div>
+            <div class="row gy-3">
+                <div class="col-lg-3 col-md-4">
+
+                    <div
+                        class="card bg-white p-5 rounded-4 form-card border-0 position-relative">
+                        <ul class="nav nav-tabs flex-column border-0" id="myTab"
+                            role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link active" id="home-tab"
+                                    data-bs-toggle="tab" href="{% url 'index' %}"
+                                    role="tab"
+                                    aria-controls="home"
+                                    aria-selected="true"><i
+                                        class="fa-solid fa-person-breastfeeding fs-2"></i>
+                                    <span>Breast Cancer</span></a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="gi-tab"
+                                    data-bs-toggle="tab" href="#gi"
+                                    role="tab"
+                                    aria-controls="gi" aria-selected="false"><i
+                                        class="fa-solid fa-disease fs-2"></i>
+                                    <span>GI
+                                        Cancer</span></a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="gu-tab"
+                                    data-bs-toggle="tab" href="#gu"
+                                    role="tab"
+                                    aria-controls="gu" aria-selected="false"><i
+                                        class="fa-regular fa-heart fs-2"></i>
+                                    <span>GU
+                                        Cancer</span></a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="Hematology-tab"
+                                    data-bs-toggle="tab" href="#Hematology"
+                                    role="tab"
+                                    aria-controls="Hematology"
+                                    aria-selected="false"><i
+                                        class="fa-solid fa-stethoscope fs-2"></i>
+                                    <span>Hematology</span></a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="lc-tab"
+                                    data-bs-toggle="tab" href="#lc"
+                                    role="tab"
+                                    aria-controls="lc" aria-selected="false"><i
+                                        class="fa-solid fa-lungs-virus fs-2"></i>
+                                    <span>Lung Cancer</span></a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="all-tab"
+                                    data-bs-toggle="tab" href="#all"
+                                    role="tab"
+                                    aria-controls="all"
+                                    aria-selected="false"><i
+                                        class="fa-solid fa-list-ul fs-2"></i>
+                                    <span>All</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8">
+
+                    <div
+                        class="card bg-white p-5 rounded-5 border-0 form-card position-relative">
+                        <!-- RH: this is bootstrap 5 tabbed panel -->
+
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home"
+                                role="tabpanel" aria-labelledby="home-tab">
+                                <ul class="list-unstyled mt-3">
+                                    <li
+                                        class="list_style border-1 rounded-2 mb-3">
+                                        <a href="#" class="color-gray-dark">
+                                            <div class="content_list"><p
+                                                    class="mb-1">
+                                                    <strong>HR+ Breast
+                                                        Cancer Management
+                                                        with
+                                                        Dr.
+                                                        Margaret Gatti-Mays
+                                                    </strong>
+                                                </p>
+                                                <small class="description">Discussing
+                                                    the management of
+                                                    Hormone
+                                                    Receptor Positive Breast
+                                                    Cancer
+                                                    with Dr. Margaret
+                                                    Gatti-Mays,
+                                                    Section Chief of the
+                                                    Breast
+                                                    Medical Oncology at the
+                                                    Ohio</small>
+                                                <i
+                                                    class="fa-regular fa-star fs-4 star_icon"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li
+                                        class="list_style border-1 rounded-2 mb-3">
+                                        <a href="#" class="color-gray-dark">
+                                            <div class="content_list"><p
+                                                    class="mb-1">
+                                                    <strong>HR+ Invasive
+                                                        Lobular
+                                                        Carcinoma Management
+                                                        with
+                                                        Dr. Jason Mouabbi</strong>
+                                                </p>
+                                                <small class="description">Discussing
+                                                    the management of
+                                                    Invasive
+                                                    Lobular Carcinoma with
+                                                    Dr.
+                                                    Jason
+                                                    Mouabbi from the MD
+                                                    Anderson
+                                                    Cancer Center. We see
+                                                    different
+                                                    histologies in</small>
+                                                <i
+                                                    class="fa-regular fa-star fs-4 star_icon"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li
+                                        class="list_style border-1 rounded-2 mb-3">
+                                        <a href="#" class="color-gray-dark">
+                                            <div class="content_list"><p
+                                                    class="mb-1">
+                                                    <strong>HER2+ Breast
+                                                        Cancer
+                                                        Algorithm Discussion
+                                                        with
+                                                        Dr. Paolo Tarantino</strong>
+                                                </p>
+                                                <small class="description">Discussing
+                                                    the management using an
+                                                    algorithm of HER 2 Neu
+                                                    Positive
+                                                    Breast Cancer – with Dr.
+                                                    Paolo
+                                                    Tarantino, European
+                                                    Institute of
+                                                    Oncology, Clinical
+                                                    Research
+                                                    Fellow</small>
+                                                <i
+                                                    class="fa-regular fa-star fs-4 star_icon"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade" id="gi"
+                                role="tabpanel" aria-labelledby="gi-tab">
+                                <ul class="list-unstyled mt-3">
+                                    <li
+                                        class="list_style border-1 rounded-2 mb-3">
+                                        <a href="#" class="color-gray-dark">
+                                            <div class="content_list"><p
+                                                    class="mb-1">
+                                                    <strong>Colon Cancer
+                                                        Algorithm Discussion
+                                                        with Dr. Cathy Eng
+                                                    </strong>
+                                                </p>
+                                                <small class="description">Discussing
+                                                    the management of Colon
+                                                    Cancer using the
+                                                    algorithm
+                                                    with Dr. Cathy Eng, MD,
+                                                    Professor of Medicine at
+                                                    the
+                                                    Vanderbilt-Ingram Cancer
+                                                    Center, David H. Johnson</small>
+                                                <i
+                                                    class="fa-regular fa-star fs-4 star_icon"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li
+                                        class="list_style border-1 rounded-2 mb-3">
+                                        <a href="#" class="color-gray-dark">
+                                            <div class="content_list"><p
+                                                    class="mb-1">
+                                                    <strong>Upper GI Cancer
+                                                        Algorithm with Dr.
+                                                        Rutika Mehta</strong>
+                                                </p>
+                                                <small class="description">Discussing
+                                                    the management using the
+                                                    algorithm of Upper
+                                                    Gastrointestinal (GI)
+                                                    Cancer
+                                                    (including esophageal,
+                                                    GEJ,
+                                                    gastric) – with Dr.
+                                                    Rutika
+                                                    Mehta, Assistant
+                                                    Professor</small>
+                                                <i
+                                                    class="fa-regular fa-star fs-4 star_icon"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li
+                                        class="list_style border-1 rounded-2 mb-3">
+                                        <a href="#" class="color-gray-dark">
+                                            <div class="content_list"><p
+                                                    class="mb-1">
+                                                    <strong>HER2+ Breast
+                                                        Cancer
+                                                        Algorithm Discussion
+                                                        with
+                                                        Dr. Paolo Tarantino</strong>
+                                                </p>
+                                                <small class="description">Discussing
+                                                    the management using an
+                                                    algorithm of HER 2 Neu
+                                                    Positive
+                                                    Breast Cancer – with Dr.
+                                                    Paolo
+                                                    Tarantino, European
+                                                    Institute of
+                                                    Oncology, Clinical
+                                                    Research
+                                                    Fellow</small>
+                                                <i
+                                                    class="fa-regular fa-star fs-4 star_icon"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade" id="gu"
+                                role="tabpanel" aria-labelledby="gu-tab">
+                                <ul class="list-unstyled mt-3">
+                                    <li
+                                        class="list_style border-1 rounded-2 mb-3">
+                                        <a href="#" class="color-gray-dark">
+                                            <div class="content_list"><p
+                                                    class="mb-1">
+                                                    <strong>Prostate Cancer
+                                                        Algorithm with Dr.
+                                                        Neeraj Agarwal
+                                                    </strong>
+                                                </p>
+                                                <small class="description">Discussing
+                                                    the management using the
+                                                    algorithm of Prostate
+                                                    Cancer
+                                                    – with Dr. Neeraj
+                                                    Agarwal,
+                                                    Director of
+                                                    Genitourinary
+                                                    Oncology Program –
+                                                    Professor
+                                                    of Medicine</small>
+                                                <i
+                                                    class="fa-regular fa-star fs-4 star_icon"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li
+                                        class="list_style border-1 rounded-2 mb-3">
+                                        <a href="#" class="color-gray-dark">
+                                            <div class="content_list"><p
+                                                    class="mb-1">
+                                                    <strong>
+                                                        Bladder Cell Cancer
+                                                        Algorithm Discussion
+                                                        with Dr. Andrea
+                                                        Apolo</strong>
+                                                </p>
+                                                <small class="description">Discussing
+                                                    the management of
+                                                    Bladder
+                                                    Cell Cancer using an
+                                                    algorithm – with Dr.
+                                                    Andrea
+                                                    Apolo, Chief of Bladder
+                                                    Cancer – Genitourinary
+                                                    Malignancy at the
+                                                    National
+                                                    Cancer Institute.</small>
+                                                <i
+                                                    class="fa-regular fa-star fs-4 star_icon"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li
+                                        class="list_style border-1 rounded-2 mb-3">
+                                        <a href="#" class="color-gray-dark">
+                                            <div class="content_list"><p
+                                                    class="mb-1">
+                                                    <strong>HER2+ Breast
+                                                        Cancer
+                                                        Algorithm Discussion
+                                                        with
+                                                        Dr. Paolo Tarantino</strong>
+                                                </p>
+                                                <small class="description">Discussing
+                                                    the management using an
+                                                    algorithm of HER 2 Neu
+                                                    Positive
+                                                    Breast Cancer – with Dr.
+                                                    Paolo
+                                                    Tarantino, European
+                                                    Institute of
+                                                    Oncology, Clinical
+                                                    Research
+                                                    Fellow</small>
+                                                <i
+                                                    class="fa-regular fa-star fs-4 star_icon"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade  " id="Hematology"
+                                role="tabpanel"
+                                aria-labelledby="Hematology-tab">
+                                <ul class="list-unstyled mt-3">
+                                    <li
+                                        class="list_style border-1 rounded-2 mb-3">
+                                        <a href="#" class="color-gray-dark">
+                                            <div class="content_list"><p
+                                                    class="mb-1">
+                                                    <strong>How to Treat
+                                                        Chronic
+                                                        Lymphocytic Leukemia
+                                                        (CLL) with Dr. Jeff
+                                                        Sharman
+                                                    </strong>
+                                                </p>
+                                                <small class="description">In
+                                                    discussion with Dr. Jeff
+                                                    Sharman, about how to
+                                                    treat
+                                                    CLL. Chronic lymphocytic
+                                                    leukemia course has
+                                                    changed
+                                                    since we have started
+                                                    using
+                                                    BTK inhibitors. Dr.
+                                                    Sharman,</small>
+                                                <i
+                                                    class="fa-regular fa-star fs-4 star_icon"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li
+                                        class="list_style border-1 rounded-2 mb-3">
+                                        <a href="#" class="color-gray-dark">
+                                            <div class="content_list"><p
+                                                    class="mb-1">
+                                                    <strong>
+                                                        How to Treat MGUS
+                                                        and
+                                                        Smoldering Myeloma
+                                                        with
+                                                        Dr. S. Vincent
+                                                        Rajkumar</strong>
+                                                </p>
+                                                <small class="description">Discussing
+                                                    how to treat MGUS
+                                                    (Monoclonal gammopathy
+                                                    of
+                                                    undetermined
+                                                    significance)
+                                                    and Smoldering Myeloma
+                                                    using
+                                                    an algorithm with Dr. S.
+                                                    Vincent Rajkumar. We</small>
+                                                <i
+                                                    class="fa-regular fa-star fs-4 star_icon"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li
+                                        class="list_style border-1 rounded-2 mb-3">
+                                        <a href="#" class="color-gray-dark">
+                                            <div class="content_list"><p
+                                                    class="mb-1">
+                                                    <strong>HER2+ Breast
+                                                        Cancer
+                                                        Algorithm Discussion
+                                                        with
+                                                        Dr. Paolo Tarantino</strong>
+                                                </p>
+                                                <small class="description">Discussing
+                                                    the management using an
+                                                    algorithm of HER 2 Neu
+                                                    Positive
+                                                    Breast Cancer – with Dr.
+                                                    Paolo
+                                                    Tarantino, European
+                                                    Institute of
+                                                    Oncology, Clinical
+                                                    Research
+                                                    Fellow</small>
+                                                <i
+                                                    class="fa-regular fa-star fs-4 star_icon"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade  " id="lc"
+                                role="tabpanel" aria-labelledby="lc-tab">
+                                <ul class="list-unstyled mt-3">
+                                    <li
+                                        class="list_style border-1 rounded-2 mb-3">
+                                        <a href="#" class="color-gray-dark">
+                                            <div class="content_list"><p
+                                                    class="mb-1">
+                                                    <strong>Story of Hope by
+                                                        a
+                                                        Determined Lung
+                                                        Cancer
+                                                        Survivor – Jill
+                                                        Feldman
+                                                    </strong>
+                                                </p>
+                                                <small class="description">Discussing
+                                                    the story of hope and
+                                                    determination from the
+                                                    lung
+                                                    cancer survivor herself,
+                                                    Jill Feldman. Jill,
+                                                    talks
+                                                    about her lung cancer
+                                                    journey from limited
+                                                    stage
+                                                    to advanced</small>
+                                                <i
+                                                    class="fa-regular fa-star fs-4 star_icon"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li
+                                        class="list_style border-1 rounded-2 mb-3">
+                                        <a href="#" class="color-gray-dark">
+                                            <div class="content_list"><p
+                                                    class="mb-1">
+                                                    <strong>Metastatic
+                                                        Non-Small
+                                                        Cell Lung Cancer
+                                                        (NSCLC)
+                                                        Algorithm w/
+                                                        Targetable
+                                                        Mutations – Dr.
+                                                        Jarushka
+                                                        Naidoo</strong>
+                                                </p>
+                                                <small class="description">Discussing
+                                                    the management of
+                                                    Advanced/Metastatic
+                                                    Non-Small Cell Lung
+                                                    Cancer
+                                                    (NSCLC) with targetable
+                                                    mutations using the
+                                                    algorithm – with Dr.
+                                                    Jarushka Naidoo,
+                                                    Professor
+                                                    at Royal College of
+                                                    Surgeons
+                                                    in Ir</small>
+                                                <i
+                                                    class="fa-regular fa-star fs-4 star_icon"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li
+                                        class="list_style border-1 rounded-2 mb-3">
+                                        <a href="#" class="color-gray-dark">
+                                            <div class="content_list"><p
+                                                    class="mb-1">
+                                                    <strong>HER2+ Breast
+                                                        Cancer
+                                                        Algorithm Discussion
+                                                        with
+                                                        Dr. Paolo Tarantino</strong>
+                                                </p>
+                                                <small class="description">Discussing
+                                                    the management using an
+                                                    algorithm of HER 2 Neu
+                                                    Positive
+                                                    Breast Cancer – with Dr.
+                                                    Paolo
+                                                    Tarantino, European
+                                                    Institute of
+                                                    Oncology, Clinical
+                                                    Research
+                                                    Fellow</small>
+                                                <i
+                                                    class="fa-regular fa-star fs-4 star_icon"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade  " id="all"
+                                role="tabpanel" aria-labelledby="all-tab">
+                                <ul class="list-unstyled filter_char">
+                                    <li>
+                                        <a href="#top">Top</a>
+                                    </li>
+                                    <li>
+                                        <a href="#0-9">0-9</a>
+                                    </li>
+                                    <li>
+                                        <a href="#A">A</a>
+                                    </li>
+                                    <li>
+                                        <a href="#B">B</a>
+                                    </li>
+                                    <li>
+                                        <a href="#C">C</a>
+                                    </li>
+                                    <li>
+                                        <a href="#D">D</a>
+                                    </li>
+                                    <li>
+                                        <a href="#E">E</a>
+                                    </li>
+                                    <li>
+                                        <a href="#F">F</a>
+                                    </li>
+                                    <li>
+                                        <a href="#G">G</a>
+                                    </li>
+                                    <li>
+                                        <a href="#H">H</a>
+                                    </li>
+                                    <li>
+                                        <a href="#I">I</a>
+                                    </li>
+                                    <li>
+                                        <a href="#J">J</a>
+                                    </li>
+                                    <li>
+                                        <a href="#K">K</a>
+                                    </li>
+                                    <li>
+                                        <a href="#L">L</a>
+                                    </li>
+                                    <li>
+                                        <a href="#M">M</a>
+                                    </li>
+                                    <li>
+                                        <a href="#N">N</a>
+                                    </li>
+                                    <li>
+                                        <a href="#O">O</a>
+                                    </li>
+                                    <li>
+                                        <a href="#P">P</a>
+                                    </li>
+                                    <li>
+                                        <a href="#Q">Q</a>
+                                    </li>
+                                    <li>
+                                        <a href="#R">R</a>
+                                    </li>
+                                    <li>
+                                        <a href="#S">S</a>
+                                    </li>
+                                    <li>
+                                        <a href="#T">T</a>
+                                    </li>
+                                    <li>
+                                        <a href="#U">U</a>
+                                    </li>
+                                    <li>
+                                        <a href="#V">V</a>
+                                    </li>
+                                    <li>
+                                        <a href="#W">W</a>
+                                    </li>
+                                    <li>
+                                        <a href="#Y">Y</a>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled mt-3">
+                                    <strong id="0-9" class="fs-5">0-9</strong>
+                                    <li
+                                        class="list_style border-1 rounded-2 mb-3">
+                                        <a href="#" class="color-gray-dark">
+                                            <div class="content_list"><p
+                                                    class="mb-1">
+                                                    <strong>HR+ Breast
+                                                        Cancer Management
+                                                        with
+                                                        Dr.
+                                                        Margaret Gatti-Mays
+                                                    </strong>
+                                                </p>
+                                                <small class="description">Discussing
+                                                    the management of
+                                                    Hormone
+                                                    Receptor Positive Breast
+                                                    Cancer
+                                                    with Dr. Margaret
+                                                    Gatti-Mays,
+                                                    Section Chief of the
+                                                    Breast
+                                                    Medical Oncology at the
+                                                    Ohio</small>
+                                                <i
+                                                    class="fa-regular fa-star fs-4 star_icon"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li
+                                        class="list_style border-1 rounded-2 mb-3">
+                                        <a href="#" class="color-gray-dark">
+                                            <div class="content_list"><p
+                                                    class="mb-1">
+                                                    <strong>HER2+ Breast
+                                                        Cancer
+                                                        Algorithm Discussion
+                                                        with
+                                                        Dr. Paolo Tarantino</strong>
+                                                </p>
+                                                <small class="description">Discussing
+                                                    the management using an
+                                                    algorithm of HER 2 Neu
+                                                    Positive
+                                                    Breast Cancer – with Dr.
+                                                    Paolo
+                                                    Tarantino, European
+                                                    Institute of
+                                                    Oncology, Clinical
+                                                    Research
+                                                    Fellow</small>
+                                                <i
+                                                    class="fa-regular fa-star fs-4 star_icon"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <strong id="A" class="fs-5">A</strong>
+                                    <li
+                                        class="list_style border-1 rounded-2 mb-3">
+                                        <a href="#" class="color-gray-dark">
+                                            <div class="content_list"><p
+                                                    class="mb-1">
+                                                    <strong>How to Treat
+                                                        Chronic
+                                                        Lymphocytic Leukemia
+                                                        (CLL) with Dr. Jeff
+                                                        Sharman
+                                                    </strong>
+                                                </p>
+                                                <small class="description">In
+                                                    discussion with Dr. Jeff
+                                                    Sharman, about how to
+                                                    treat
+                                                    CLL. Chronic lymphocytic
+                                                    leukemia course has
+                                                    changed
+                                                    since we have started
+                                                    using
+                                                    BTK inhibitors. Dr.
+                                                    Sharman,</small>
+                                                <i
+                                                    class="fa-regular fa-star fs-4 star_icon"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <strong id="A" class="fs-5">B</strong>
+                                    <li
+                                        class="list_style border-1 rounded-2 mb-3">
+                                        <a href="#" class="color-gray-dark">
+                                            <div class="content_list"><p
+                                                    class="mb-1">
+                                                    <strong>HER2+ Breast
+                                                        Cancer
+                                                        Algorithm Discussion
+                                                        with
+                                                        Dr. Paolo Tarantino</strong>
+                                                </p>
+                                                <small class="description">Discussing
+                                                    the management using an
+                                                    algorithm of HER 2 Neu
+                                                    Positive
+                                                    Breast Cancer – with Dr.
+                                                    Paolo
+                                                    Tarantino, European
+                                                    Institute of
+                                                    Oncology, Clinical
+                                                    Research
+                                                    Fellow</small>
+                                                <i
+                                                    class="fa-regular fa-star fs-4 star_icon"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <strong id="C" class="fs-5">C</strong>
+                                    <li
+                                        class="list_style border-1 rounded-2 mb-3">
+                                        <a href="#" class="color-gray-dark">
+                                            <div class="content_list"><p
+                                                    class="mb-1">
+                                                    <strong>HR+ Invasive
+                                                        Lobular
+                                                        Carcinoma Management
+                                                        with
+                                                        Dr. Jason Mouabbi</strong>
+                                                </p>
+                                                <small class="description">Discussing
+                                                    the management of
+                                                    Invasive
+                                                    Lobular Carcinoma with
+                                                    Dr.
+                                                    Jason
+                                                    Mouabbi from the MD
+                                                    Anderson
+                                                    Cancer Center. We see
+                                                    different
+                                                    histologies in</small>
+                                                <i
+                                                    class="fa-regular fa-star fs-4 star_icon"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <strong id="D" class="fs-5">D</strong>
+
+                                    <li
+                                        class="list_style border-1 rounded-2 mb-3">
+                                        <a href="#" class="color-gray-dark">
+                                            <div class="content_list"><p
+                                                    class="mb-1">
+                                                    <strong>HER2+ Breast
+                                                        Cancer
+                                                        Algorithm Discussion
+                                                        with
+                                                        Dr. Paolo Tarantino</strong>
+                                                </p>
+                                                <small class="description">Discussing
+                                                    the management using an
+                                                    algorithm of HER 2 Neu
+                                                    Positive
+                                                    Breast Cancer – with Dr.
+                                                    Paolo
+                                                    Tarantino, European
+                                                    Institute of
+                                                    Oncology, Clinical
+                                                    Research
+                                                    Fellow</small>
+                                                <i
+                                                    class="fa-regular fa-star fs-4 star_icon"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
