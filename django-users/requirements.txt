@@ -1,1 +1,5 @@
 django
+Faker
+factory-boy
+django-seed
+psycopg2

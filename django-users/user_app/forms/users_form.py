@@ -1,7 +1,11 @@
 from django import forms
 
-class StudentForm(forms.Form):
-    
+from ..models import Student
+
+class StudentForm(forms.ModelForm):
+    class Meta:
+        model = Student
+        fields = ('__all__')
     first_name = forms.CharField(
         max_length=255,
         # widget= forms.TextInput(attrs={'class': 'form-control'}),

@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'user_app',
-    'onc_app'
-    # 'employees'
+    'onc_app',
+    'django_seed',
 ]
 
 MIDDLEWARE = [

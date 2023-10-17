@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.http import HttpResponse
 from .forms.users_form import StudentForm
@@ -34,10 +34,23 @@ def create(request):
 
 
 def update(request,id):
-    student = Student.objects.get(pk=id)
+    # student = Student.objects.get(pk=id)
+
+    instance = get_object_or_404(Student, id=id)
+    form = StudentForm(request.POST or None, instance=instance)
+    if form.is_valid():
+        form.save()
+        return redirect('users')
+    return render(request, 'update-form.html', {'form': form}) 
+
+
+
+
+
     if request.method =='GET':
+        form = StudentForm()
         # student = Student.objects.get(id=id)
-        return render(request,'update-form.html',{'student':student})
+        return render(request,'update-form.html',{'form':form,'student':student})
     else:
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
