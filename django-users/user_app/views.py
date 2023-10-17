@@ -44,23 +44,20 @@ def update(request,id):
     return render(request, 'update-form.html', {'form': form}) 
 
 
+    # if request.method =='GET':
+    #     form = StudentForm()
+    #     # student = Student.objects.get(id=id)
+    #     return render(request,'update-form.html',{'form':form,'student':student})
+    # else:
+    #     first_name = request.POST.get('first_name')
+    #     last_name = request.POST.get('last_name')
+    #     email = request.POST.get('email')
 
-
-
-    if request.method =='GET':
-        form = StudentForm()
-        # student = Student.objects.get(id=id)
-        return render(request,'update-form.html',{'form':form,'student':student})
-    else:
-        first_name = request.POST.get('first_name')
-        last_name = request.POST.get('last_name')
-        email = request.POST.get('email')
-
-        student.first_name = first_name
-        student.last_name = last_name
-        student.email = email
-        student.save()
-        return redirect('users')
+    #     student.first_name = first_name
+    #     student.last_name = last_name
+    #     student.email = email
+    #     student.save()
+    #     return redirect('users')
 
 def delete(request,id):
     student = Student.objects.get(pk=id)
