@@ -44,5 +44,5 @@ obj1 = MyClass()
 obj2 = MyClass()
 
 obj1.increment_class_variable()
-print(obj1. )  # Output: 1
+print(obj1.increment )  # Output: 1
 print(obj2.class_variable)  # Output: 1

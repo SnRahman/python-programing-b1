@@ -1,0 +1,120 @@
+.top-nav{
+    height: 50px;
+    background-color: #7B4F9A;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.shop-now-btn {
+    color: #fff;
+}
+
+.lang-btn {
+    color: #fff !important;
+}
+.site-icon {
+    color: #7B4F9A !important;
+}
+
+.logo-word {
+    font-size: 25px !important;
+    font-weight: 700; 
+}
+
+.logo-cart {
+    font-size: 40px !important; 
+
+}
+
+.nav-ul li {
+    padding: 20px;
+    font-size: 20px;
+}
+
+.nav-search {
+    width: 200px;
+    border: none !important;
+    background-color:#F5F5F5 !important;
+    font-size: 13px !important;
+}
+
+.nav-btn {
+    background-color:#F5F5F5 !important;
+    color: #7B4F9A !important;
+}
+
+.main-img{
+    background-color: #F3EEFA;
+    width: 1000px;
+    height: 700px;
+}
+
+.main-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 100px;
+}
+
+.form-details {
+    font-weight: 600;
+}
+
+.form-inputs {
+    border: none;
+    border-bottom:1px solid black ;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.login-btn {
+    height: 40px;
+    width: 120px;
+    background-color: #7B4F9A;
+    color: #fff;
+    border: 1px solid #7B4F9A;
+    border-radius: 3px;
+}
+
+.forgot-password {
+    color: #7B4F9A;
+}
+
+.footer {
+    background-color: #7B4F9A;
+    color: #fff;
+}
+
+.footer .nav-item a ,.footer .nav-item a:hover {
+    color: #fff;
+}
+
+.footer-search {
+    height: 40px;
+    width: 150px;
+    border: 2px solid #fff !important;
+    border-right: none !important;
+    background-color: #7B4F9A !important;
+    font-size: 13px !important;
+}
+
+.footer-search::placeholder {
+    color: #F3EEFA !important;
+}
+
+.footer-btn {
+    background-color:#7B4F9A !important;
+    color: #fff !important;
+    border: 2px solid #fff !important;
+    border-left: none !important;
+}
+
+.social-icons {
+    font-size: 30px;
+}
+
+.social-icons i {
+    margin-top: 20px;
+    padding-left: 10px;
+}
