@@ -1,0 +1,248 @@
+.top-nav{
+    height: 50px;
+    background-color: #7B4F9A;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.shop-now-btn {
+    color: #fff;
+}
+
+.lang-btn {
+    color: #fff !important;
+}
+.site-icon {
+    color: #7B4F9A !important;
+}
+
+.logo-word {
+    font-size: 25px !important;
+    font-weight: 700; 
+}
+
+.logo-cart {
+    font-size: 40px !important; 
+
+}
+
+.nav-ul li {
+    padding: 20px;
+    font-size: 20px;
+}
+
+.nav-search {
+    width: 200px;
+    border: none !important;
+    background-color:#F5F5F5 !important;
+    font-size: 13px !important;
+}
+
+.nav-btn {
+    background-color:#F5F5F5 !important;
+    color: #7B4F9A !important;
+}
+
+.main-img{
+    background-color: #F3EEFA;
+    width: 1000px;
+    height: 700px;
+}
+
+.main-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 100px;
+}
+
+.form-details {
+    font-weight: 600;
+}
+
+.form-inputs {
+    display: block;
+    border: none;
+    border-bottom:1px solid black ;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.login-btn {
+    height: 40px;
+    width: 120px;
+    background-color: #7B4F9A;
+    color: #fff;
+    border: 1px solid #7B4F9A;
+    border-radius: 3px;
+}
+
+.forgot-password {
+    color: #7B4F9A;
+}
+
+.footer {
+    background-color: #7B4F9A;
+    color: #fff;
+}
+
+.footer .nav-item a ,.footer .nav-item a:hover {
+    color: #fff;
+}
+
+.footer-search {
+    display: block;
+    height: 40px;
+    width: 150px;
+    border: 2px solid #fff !important;
+    border-right: none !important;
+    background-color: #7B4F9A !important;
+    font-size: 13px !important;
+}
+
+.footer-search::placeholder {
+    color: #F3EEFA !important;
+}
+
+.footer-btn {
+    background-color:#7B4F9A !important;
+    color: #fff !important;
+    border: 2px solid #fff !important;
+    border-left: none !important;
+}
+
+.social-icons {
+    font-size: 30px;
+}
+
+.social-icons i {
+    margin-top: 20px;
+    padding-left: 10px;
+}
+/* .radio-btn {
+    accent-color: #7B4F9A;
+    visibility: visible;
+} */
+
+
+  /* .wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+   */
+  input {
+    display: none;
+  }
+  
+  .color-lable {
+    cursor: pointer;
+    margin: 10px 10px;
+  }
+  
+  .color-lable:before {
+    content: '';
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    z-index: 2;
+    transition: box-shadow .4s ease, background .3s ease;
+  }
+  
+  input:checked + .color-lable:before {
+    border: 3px solid black;
+    background: #fff;
+  }
+
+  #rad1+.color-lable:before {
+    background: #7B4F9A;
+  }
+
+  #rad2+.color-lable:before {
+    background: #61FBA1;
+  }
+
+  .color-heading {
+    font-size: 20px;
+  }
+
+  /* Size label style starts */
+
+  .size-lable {
+    cursor: pointer;
+    margin: 10px 10px;
+  }
+  
+  .size-lable{
+    text-align: center;
+    /* content: ''; */
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    background: #fff;
+    border: 2px solid black;
+    /* border-radius: 50%; */
+    z-index: 2;
+    transition: box-shadow .4s ease, background .3s ease;
+  }
+  /* #size1::before {
+    content:''
+  } */
+  input:checked + .size-lable{
+    border: 2px solid #7B4F9A ;
+    background: #7B4F9A;
+    color: #FFF;
+  }
+
+  .qty-div {
+    height: 40px;
+  }
+  .qty-btns {
+    background-color: #fff;
+    height: 100%;
+    width: 40px;
+    border-radius: none !important;
+    border: 1px solid black !important;
+  }
+  .qty-btns:hover {
+    background-color: #7B4F9A;
+    color: #fff;
+    border: 1px solid #7B4F9A !important;
+  }
+
+  #qty{
+    text-align: center;
+    height: 100%;
+    border-radius: none !important;
+    border: 1px solid black !important;
+    width: 70px;
+    display: block;
+    border-left: none !important;
+    border-right: none !important;
+  }
+
+  .order-btn {
+    height: 40px;
+    width: 200px;
+    background-color: #7B4F9A;
+    color: #fff;
+    border: 1px solid #7B4F9A;
+    border-radius: 3px;
+}
+
+.delivery-div {
+    border: 1px solid gray;
+}
+.icon {
+    font-size: 30px
+}
+
+.delivery-text {
+    color: #000;
+    text-decoration: none;
+    margin: 0;
+}
