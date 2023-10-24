@@ -1,0 +1,132 @@
+{% extends 'template.html' %}
+{% load static %}
+
+{% block content %}
+          <!-- main content -->
+     
+<div class="container my-5 d-flex justify-content-between color displayblock">
+    <light><a href="" > Account </a> / <a href="" >My Account</a> /  <a href="" >Product </a>  / <a href="" >View Cart</a>  /   <a href=""class="fw-bold"> CheckOut </a> </light>
+  </div>
+    
+    
+    
+    <div  class="container pe-3 d-flex justify-content-between pb-5">
+        <form class="  col-md-5 row g-4 ">
+            <h2 class="forgot-password">Billing Details</h2>
+  
+            <div class="form-group col-md-10">
+                <label for="inputEmail4" class="form-label forgot-password ">First Name</label>
+                <input type="email" class="form-control nav-search" id="inputEmail4" placeholder="">
+              </div><br>
+  
+              <div class="form-group col-md-10">
+                <label for="inputPassword4" class="form-label forgot-password">Company Name</label>
+                <input type="password" class="form-control nav-search" id="inputPassword4" placeholder="">
+              </div>
+  
+              <div class="form-group col-md-10">
+                <label for="inputEmail4" class="form-label forgot-password">Street Address</label>
+                <input type="email" class="form-control nav-search" id="inputEmail4" placeholder="">
+              </div><br>
+  
+              <div class="form-group col-md-10">
+                <label for="inputPassword4" class="form-label forgot-password">Appartment, floor, etc. <span>(Optional)</span></label>
+                <input type="password" class="form-control nav-search" id="inputPassword4" placeholder=" ">
+              </div>
+            <!-- <div class="form-row"> -->
+  
+                <div class="form-group col-md-10">
+                <label for="inputCity " class="forgot-password" >Town/City*</label>
+                <input type="text" class="form-control nav-search " id="inputCity" placeholder="">
+              </div>
+  
+              <div class="form-group col-md-10">
+                <label for="inputCity"  class="forgot-password"> Phone Number*</label>
+                <input type="text" class="form-control nav-search" id="inputCity" placeholder="">
+              </div>
+  
+              <div class="form-group col-md-10">
+                <label for="inputCity"  class="forgot-password">Email Address*</label>
+                <input type="text" class="form-control nav-search" id="inputCity" placeholder="">
+              </div>
+  
+              <div class=" col-md-10 mb-3 form-check mt-3">
+                <input type="checkbox" class="form-check-input color displayblock" id="exampleCheck1">
+                <label class="form-check-label fw-bold" for="exampleCheck1">Save this information for faster check-out next time</label>
+              </div>
+          </form>
+  
+  
+  
+          
+  
+  
+            <div class="justify-content-center col-md-6 my-5 ps-3 mx-3"> 
+                <div class="d-flex justify-content-between my-3">
+                        <div class="col-md-2">   <img src=" {% static 'img/rsms33bvntdy2yulumkt-2.png' %}" height="40px" width="60px" alt=""> </div>
+                        <div class="col-md-2 fw-bold"> Bag </div>
+                        <div class="col-md-0 fw-bold"><span>  $ </span> 30</div>
+                </div>
+                 
+                        
+                <div class="d-flex justify-content-between my-3">
+                        <div class="col-md-2">   <img src=" {% static 'media/laptop.jpg' %}" height="40px" width="60px" alt=""> </div>
+                        <div class="col-md-2 fw-bold"> Laptop Stand </div>
+                        <div class="col-md-0 fw-bold"> <span> $ </span> 1100</div>        
+                </div>
+  
+                      
+                <div class="d-flex justify-content-between  pb-4 form-inputs">
+                    <div class="col-md-2  fw-bold">  Subtotal: </div>
+                    <div class="col-md-2"> </div>
+                    <div class="col-md-0 fw-bold"> <span> $ </span> 1750</div>    
+                   
+                </div>
+          
+                <div class="d-flex justify-content-between  pb-4 form-inputs">
+                    <div class="col-md-2  fw-bold">  Shipping: </div>
+                    <div class="col-md-2"> </div>
+                    <div class="col-md-0 fw-bold"> <span>  </span> Free </div>    
+                   
+                </div>
+  
+                <div class="d-flex justify-content-between  pb-4">
+                    <div class="col-md-2  fw-bold">  Total: </div>
+                    <div class="col-md-2"> </div>
+                    <div class="col-md-0 fw-bold"> <span> $ </span> 1750 </div>    
+                   
+                </div>
+                <div class=" d-flex align-items-center justify-content-between">
+                  <input type="radio" id="rad1" name="rads" class="displayblock">
+                  <label class="color-lable1"  for="rad1"></label>
+                  <span class="color-heading ms-3">Bank </span>
+                  <div class="col-lg-9"></div>
+                  <div>
+                    <img src="{% static 'media/paypal.png' %}" height="30px" width="40px" alt="">
+                    <img src="{% static 'media/visa.jpg' %}" height="30px" width="40px" alt="">
+                    <!-- <img src="{% static 'store/img/rsms33bvntdy2yulumkt-2.png'%}" height="30px" width="30px" alt=""> -->
+                </div>
+                </div> 
+                
+                <div class=" d-flex align-items-center justify-content-left">
+                  <input type="radio" id="rad2" name="rads" class="displayblock" >
+                  <label class="color-lable1" for="rad2"></label>
+                  <span class="color-heading ms-3">Cash on Delivery </span>
+                </div>
+              <div class="d-flex mt-2">
+                    <input type="text" name="coupon-code" id="coupon-code" placeholder="Coupon Code" class="coupon-code  displayblock">
+                    <Button type="submit" name="coupon-code" value="coupon-code" class="btn-cart ms-3">Apply Coupon</Button>
+                    </div>
+                    <div class="my-3">
+                        <Button type="submit" name="coupon-code" value="coupon-code" class="btn-cart">Place Order</Button>
+                    </div>
+  
+                    <div class="col-md-8"> </div>
+  
+                 
+                </div>
+              
+               
+               
+            </div>
+{% endblock %}

@@ -1,0 +1,186 @@
+{% extends 'template.html' %}
+{% load static %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6 main-img"><img class="card-img-top mb-6 mb-md-0 " src=" {% static 'img/rsms33bvntdy2yulumkt-2.png' %}" alt="..." /></div>
+            <div class="col-md-6">
+                <h2 class="fw-bolder">Bag</h2>
+                <!-- Product reviews-->
+                <div class="d-flex text-warning mb-2">
+                    <div class="bi-star-fill"></div>
+                    <div class="bi-star-fill"></div>
+                    <div class="bi-star-fill"></div>
+                    <div class="bi-star-fill"></div>
+                    <div class="bi-star-fill"></div>
+                    <p class="px-2 text-dark">(150 Reviews) |</p>
+                    <span class="text-success">In Stock </span></p> 
+                </div>
+                <div class="fs-5 mb-3">
+                    <span class="text-decoration-line-through">$45.00</span>
+                    <span>$40.00</span>
+                </div>
+                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
+                <hr>
+                <div class="wrap d-flex align-items-center">
+                    <span class="color-heading">Colours: </span>
+                    <input type="radio" id="rad1" name="rads">
+                    <label class="color-lable"  for="rad1"></label>
+                    <input type="radio" id="rad2" name="rads" >
+                    <label class="color-lable" for="rad2"></label>
+                </div>
+
+                <div class="wrap d-flex align-items-center">
+                    <span class="color-heading">Size: </span>
+                    <input type="radio" id="size1" name="size">
+                    <label class="size-lable" for="size1">XS</label>
+
+                    <input type="radio" id="size2" name="size" >
+                    <label class="size-lable" for="size2">S</label>
+
+                    <input type="radio" id="size3" name="size" >
+                    <label class="size-lable" for="size3">M</label>
+
+                    <input type="radio" id="size4" name="size" >
+                    <label class="size-lable" for="size4">L</label>
+
+                    <input type="radio" id="size5" name="size" >
+                    <label class="size-lable" for="size5">XL</label>
+                </div>
+
+                <div class="wrap d-flex align-items-center qty-div">
+                    <button class="qty-btns"><i class="fa-solid fa-minus"></i></button>
+                    <input type="text" name="qty" id="qty" value="1">
+                    <button class="qty-btns"><i class="fa-solid fa-plus"></i></button>
+
+                    <button type="submit" class="order-btn mx-3">Buy Now</button>
+                    
+                    <button class="qty-btns"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="wrap d-flex align-items-center delivery-div mt-5">
+                    <div class="icon p-3">
+                        <i class="fa-solid fa-truck"></i>
+                    </div>
+                    <div class="text">
+                        <div>Free Delivery</div>
+                        <a href="#" class="delivery-text">Enter your postal code for free delivery availibility</a>
+                    </div>
+                </div>
+                <div class="wrap d-flex align-items-center delivery-div">
+                    <div class="icon p-3">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </div>
+                    <div class="text">
+                        <div>Free Delivery</div>
+                        <span>Free 30 days Delivery returns</span><a href="#" class="delivery-text">  Details</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+            
+
+<div class="container">
+    <div class="align-items-center d-flex mb-3">
+        <button class="bts">  </button>  <span class="forgot-password fs-6 fw-semibold ps-2">This Month</span>
+    </div>
+    <div class="viewall"><h2>Best Selling Products</h2>
+    <div class="viewall"><Button style="color: #ffffff; background-color: #7b4f9a; height: 50px; width: 150px;">View All</Button> </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-5 g-6 mt-5">
+        <div class="col">
+        <div class="card h-50">
+            <img src=" {% static 'media/bag.jpg' %} " class="card-img-top" alt="..." height="100%">
+            <div class="card-body">
+            <h5 class="card-title">Bag</h5>
+            <h1 style="color: #7b4f9a;">35.00 AED</h1>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-regular fa-star"style="color: gold;"></i>
+            (65)
+            </div>
+            
+        </div>
+        </div>
+        <div class="col">
+        <div class="card h-50">
+            <img src=" {% static 'media/black-kat.jpg' %} " class="card-img-top" alt="..." height="100%">
+            <div class="card-body">
+            
+            <h5 class="card-title">Shoes</h5>
+            <h1 style="color: #7b4f9a;">28.00 AED</h1>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-regular fa-star"style="color: gold;"></i>
+            (65)
+            </div>
+            
+        </div>
+        </div>
+        <div class="col">
+        <div class="card h-50">
+            <img src="{% static 'media/eb3c0d7397908c5ac5edf6e1fc54756b.jpg' %}" class="card-img-top" alt="..." height="100%">
+            <div class="card-body">
+            
+            <h5 class="card-title">Shoes</h5>
+            <h1 style="color: #7b4f9a;">12.00 AED</h1>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-regular fa-star"style="color: gold;"></i>
+            (65)
+            </div>
+            
+        </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-50">
+              <img src=" {% static 'media/laptop.jpg' %}" class="card-img-top" alt="..." height="100%">
+              <div class="card-body">
+                
+                <h5 class="card-title"> Laptop Stand</h5>
+                <h2 style="color: #7b4f9a;">30.00 AED</h2>
+                <i class="fa-solid fa-star" style="color: gold;"></i>
+                <i class="fa-solid fa-star" style="color: gold;"></i>
+                <i class="fa-solid fa-star" style="color: gold;"></i>
+                <i class="fa-solid fa-star" style="color: gold;"></i>
+                <i class="fa-regular fa-star"style="color: gold;"></i>
+                (65)
+                </div>
+               </div>
+              </div>
+
+    <div class="col">
+        <div class="card h-50">
+        <img src="{% static 'media/65528154cf69d1a710c4265ecabd9d51.jpg' %}" class="card-img-top" alt="..." height="100%">
+        <div class="card-body">
+            
+            <h5 class="card-title"> Fashion Shoes</h5>
+            <h1 style="color: #7b4f9a;">30.00 AED</h1>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-regular fa-star"style="color: gold;"></i>
+            (65)
+            </div>
+        
+        </div>
+        </div>
+    </div> 
+  </div>
+<br>
+<br>
+<br>
+
+{% endblock %}

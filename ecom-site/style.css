@@ -244,3 +244,11 @@
     text-decoration: none;
     margin: 0;
 }
+
+.details {
+  width: 400px;
+}
+
+.payment {
+  display: block;
+}

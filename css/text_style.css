@@ -7,7 +7,7 @@ p {
 }
 
 .last_paragraph {
-    /* text-align-last: center; */
+    text-align-last: center;
     text-indent:20% ;
 }
 
@@ -19,7 +19,7 @@ p {
 
  text-decoration-line: overline;
  text-decoration-color:red ;
- text-decoration-style: wavy ;
+ text-decoration-style:double ;
  text-decoration-thickness: 1px;   
 }
 

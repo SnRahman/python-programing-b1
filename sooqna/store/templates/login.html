@@ -1,0 +1,32 @@
+{% extends 'template.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="main-content mb-5 pb-5 d-flex flex-direction-row pt-1 ps-5  ">
+        <div class="main-img ps-5" >
+            <img src=" {% static 'img/rsms33bvntdy2yulumkt-2.png' %}" height="650px" width="90%" alt="">
+        </div>
+        <div class="main-form">
+            <h1 class="mb-4">Log in to Exclusive</h1>
+            <p class="form-details mb-5">Enter you details bellow</p>
+            <form action="{% url 'login'%}" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <input type="text" class="form-inputs" name="username" id="formGroupExampleInput" placeholder="Email or Phone Number">
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-inputs" name="password" id="formGroupExampleInput2" placeholder="Password">
+                </div>
+                <div class="d-flex justify-content-between ">
+                    <button type="submit" class="login-btn">Log in</button>
+                    <a href="" class="pt-2 forgot-password">Forget Password ?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+    

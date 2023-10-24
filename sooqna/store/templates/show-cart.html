@@ -1,0 +1,99 @@
+{% extends 'template.html' %}
+{% load static %}
+
+{% block content %}
+     <!-- <section> -->
+        <div class=" container my-5">
+            <div class="my-5"><a class="my" href="#">Home  /</a> <a class="my fw-bold" href="#"> Cart</a></div>
+    
+            <br>
+            
+            <table class="table table-striped-rows ps-5 ">
+                <thead>
+                  <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Subtotal</th>
+                  </tr>
+                  
+                </thead>
+    
+                <tbody>
+                  <tr>
+                    <td scope="row">Bag</th>
+                    <td>30 A.E.D</td>
+                    <td> <input type="number" class="inp1 displayblock" ></td>
+                    <td>30 A.E.D</td>
+                  </tr>
+                  
+                  <tr>
+                    <td scope="row">Bag spA</th>
+                    <td>28 A.E.D</td>
+                    <td> <input type="number" class="inp1 displayblock" ></td>
+                    <td>28 A.E.D</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">SPA mostorizer </th>
+                    <td>20 A.E.D</td>
+                    <td> <input type="number show" class="inp1 displayblock" placeholder="" value="" ></td>
+                    <td>20 A.E.D</td>
+                  </tr>
+                </tbody>
+              </table>
+            <br>
+                <div class="d-flex justify-content-between">
+                    <div >
+                        <button type="submit" class="rts" > Return to Shop </button>
+                    </div>
+                    <div >
+                        <input type="submit" value="Update Cart" class="rts1">
+                    </div>
+                </div>
+                <br>
+                <br>
+    
+                 <div class="d-flex justify-content-between">
+                    <div class="d-flex">
+                    <input type="text" name="coupon-code" id="coupon-code" placeholder="Coupon Code" class="coupon-code displayblock">
+                    <Button type="submit" name="coupon-code" value="coupon-code" class="btn-cart">Apply Coupon</Button>
+                    </div>
+                  <br>
+                  <br>
+                  <br>
+                
+                            
+                   <div class="cart-total">
+                    <h5>Cart Total</h5>
+                    <br>
+                    <div class="d-flex justify-content-between ps-1">
+                        <input type="hidden">
+                        <p>Subtotal:</p>
+                        <span>
+                            AED
+                        </span>
+                     </div>
+                     <hr>
+                     <div class="d-flex justify-content-between ps-1">
+                        <input type="hidden">
+                        <p>Suhipping:</p>
+                        <span>
+                            Free
+                        </span>
+                     </div>
+    <hr>
+                     <div class="d-flex justify-content-between ps-1">
+                        <input type="hidden">
+                        <p>Total:</p>
+                        <span>
+                            AED
+                        </span>
+                     </div>
+                     
+                     <div class=" d-flex justify-content-center"><button type="submit" class="btn-cart"> Process to checkout</button>  </div>
+                </div>  
+    
+           </div>
+          </div>
+
+{% endblock %}

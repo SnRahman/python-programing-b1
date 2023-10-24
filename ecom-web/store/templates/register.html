@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form</title>
+</head>
+<body>
+    <form action="{% url 'register' %}">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button>
+            
+        </button>
+    </form>
+</body>
+</html>

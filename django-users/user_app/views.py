@@ -16,6 +16,7 @@ def create(request):
         return render(request,'form.html',{'form':form})
     else:
         form = StudentForm(request.POST,request.FILES)
+        
         if form.is_valid():
             first_name = form.cleaned_data['first_name']
             last_name = form.cleaned_data['last_name']
