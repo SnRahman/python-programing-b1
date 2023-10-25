@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import UserCreationForm 
 from django.contrib import messages
 from django.http import HttpResponse
+from .forms.userform import SignupForm
+
 # Create your views here.
 
 def home(request):
@@ -27,9 +30,21 @@ def logout_user(request):
     messages.success(request, 'logged out successfull.')
     return redirect('login')
 
+def signup_user(request):
+    if request.method == 'POST':
+        form = SignupForm(request.POST)
+        # return HttpResponse(form.errors)
+        if form.is_valid:
+            form.save()
+            messages.success(request,'Registered Successfully!!! kindy login')
+            return redirect('login')
 
-
-
+        else:
+            messages.error(request,'Something went wrong. try again with valid info.')
+            return redirect('signup')
+    else:
+        form = SignupForm()
+        return render(request,'signup.html',{'form':form})
 
 def edit_profile(request):
     return render(request, 'edit-profile.html')

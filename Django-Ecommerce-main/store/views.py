@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .forms import SignUpForm
 from django import forms
+from django.http import HttpResponse
 
 
 def category(request, foo):
@@ -59,16 +60,18 @@ def logout_user(request):
 
 
 def register_user(request):
+	# form = UserCreationForm()
 	form = SignUpForm()
 	if request.method == "POST":
+		# form = UserCreationForm(request.POST)
 		form = SignUpForm(request.POST)
 		if form.is_valid():
 			form.save()
-			username = form.cleaned_data['username']
-			password = form.cleaned_data['password1']
-			# log in user
-			user = authenticate(username=username, password=password)
-			login(request, user)
+			# username = form.cleaned_data['username']
+			# password = form.cleaned_data['password1']
+			# # log in user
+			# user = authenticate(username=username, password=password)
+			# login(request, user)
 			messages.success(request, ("You Have Registered Successfully!! Welcome!"))
 			return redirect('home')
 		else:

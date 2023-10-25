@@ -6,9 +6,10 @@ class StudentForm(forms.ModelForm):
     class Meta:
         model = Student
         fields = ('__all__')
+        
     first_name = forms.CharField(
         max_length=255,
-        # widget= forms.TextInput(attrs={'class': 'form-control'}),
+        widget= forms.TextInput(attrs={'class': 'form-control'}),
         error_messages= {'invalid':'Fist name is required'}
         )
     

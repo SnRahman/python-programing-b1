@@ -315,9 +315,9 @@ span a{
     transform: translate(-50%, -50%);
   }
    */
-  input {
+  /* input {
     display: none;
-  }
+  } */
   
   .color-lable {
     cursor: pointer;
