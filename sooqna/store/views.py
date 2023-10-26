@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.http import HttpResponse
 from .forms.userform import SignupForm
+from .models import Product
 
 # Create your views here.
 
@@ -38,7 +39,6 @@ def signup_user(request):
             form.save()
             messages.success(request,'Registered Successfully!!! kindy login')
             return redirect('login')
-
         else:
             messages.error(request,'Something went wrong. try again with valid info.')
             return redirect('signup')
@@ -46,11 +46,20 @@ def signup_user(request):
         form = SignupForm()
         return render(request,'signup.html',{'form':form})
 
+
+def shop(request):
+    products = Product.objects.all()
+    return render(request,'shop.html',{'products':products})
+
+def product_detalis(request, id):
+    product = Product.objects.get(pk=id)
+    return render(request,'product-details.html',{'product':product})
+
+
+
+
 def edit_profile(request):
     return render(request, 'edit-profile.html')
-
-def product_detalis(request):
-    return render(request,'product-details.html')
 
 def show_cart(request):
     return render(request, 'show-cart.html')

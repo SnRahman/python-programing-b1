@@ -1,0 +1,122 @@
+{% extends 'template.html' %}
+{% load static %}
+
+{% block content %}
+<header class="py-5 shop-header">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Shop in style</h1>
+            <!-- <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p> -->
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-5 g-6 mt-5">
+        {% if products %}
+            {% for product in products %}
+                <div class="col">
+                    <div class="card h-50">
+                        {% if product.is_sale %}
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                        {% endif %}
+                        
+                        <a href="{% url 'product_details' product.id %}"><img src=" {{ product.image.url }} " class="card-img-top" alt="..." height="100%"></a>
+                        <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p>{{ product.description }}</p>
+
+                        {% if product.is_sale %}
+                            <span class="text-decoration-line-through">$ {{ product.price }}</span>
+                            <h3 style="color: #7b4f9a; display: inline;">${{ product.sale_price }}</h3><br>
+                        {% else %}
+                            <h3 style="color: #7b4f9a;">${{ product.price }}</h3>
+                        {% endif %}
+
+                        <i class="fa-solid fa-star" style="color: gold;"></i>
+                        <i class="fa-solid fa-star" style="color: gold;"></i>
+                        <i class="fa-solid fa-star" style="color: gold;"></i>
+                        <i class="fa-solid fa-star" style="color: gold;"></i>
+                        <i class="fa-regular fa-star"style="color: gold;"></i>
+                        (65)
+                        </div>
+                        
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+
+
+        <!-- <div class="col">
+        <div class="card h-50">
+            <img src=" {% static 'media/black-kat.jpg' %} " class="card-img-top" alt="..." height="100%">
+            <div class="card-body">
+            
+            <h5 class="card-title">Shoes</h5>
+            <h1 style="color: #7b4f9a;">28.00 AED</h1>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-regular fa-star"style="color: gold;"></i>
+            (65)
+            </div>
+            
+        </div>
+        </div>
+        <div class="col">
+        <div class="card h-50">
+            <img src="{% static 'media/eb3c0d7397908c5ac5edf6e1fc54756b.jpg' %}" class="card-img-top" alt="..." height="100%">
+            <div class="card-body">
+            
+            <h5 class="card-title">Shoes</h5>
+            <h1 style="color: #7b4f9a;">12.00 AED</h1>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-regular fa-star"style="color: gold;"></i>
+            (65)
+            </div>
+            
+        </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-50">
+              <img src=" {% static 'media/laptop.jpg' %}" class="card-img-top" alt="..." height="100%">
+              <div class="card-body">
+                
+                <h5 class="card-title"> Laptop Stand</h5>
+                <h2 style="color: #7b4f9a;">30.00 AED</h2>
+                <i class="fa-solid fa-star" style="color: gold;"></i>
+                <i class="fa-solid fa-star" style="color: gold;"></i>
+                <i class="fa-solid fa-star" style="color: gold;"></i>
+                <i class="fa-solid fa-star" style="color: gold;"></i>
+                <i class="fa-regular fa-star"style="color: gold;"></i>
+                (65)
+                </div>
+               </div>
+              </div>
+
+    <div class="col">
+        <div class="card h-50">
+        <img src="{% static 'media/65528154cf69d1a710c4265ecabd9d51.jpg' %}" class="card-img-top" alt="..." height="100%">
+        <div class="card-body">
+            
+            <h5 class="card-title"> Fashion Shoes</h5>
+            <h1 style="color: #7b4f9a;">30.00 AED</h1>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-solid fa-star" style="color: gold;"></i>
+            <i class="fa-regular fa-star"style="color: gold;"></i>
+            (65)
+            </div>
+        
+        </div>
+        </div> -->
+    </div> 
+  </div>
+
+{% endblock %}

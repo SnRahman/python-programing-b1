@@ -107,10 +107,15 @@ li nav-item a{
     color: black;
 }
 .main-img{
-    background-color: #F3EEFA;
+    /* background-color: #F3EEFA; */
     width: 1000px;
     height: 800px;
-    padding-top: 130px;
+}
+
+.product-details-img {
+    height: 100%;
+    width: 100%;
+    /* padding : 0   */
 }
 
 .main-form {
@@ -315,9 +320,9 @@ span a{
     transform: translate(-50%, -50%);
   }
    */
-  /* input {
+   .cart-btn {
     display: none;
-  } */
+  }
   
   .color-lable {
     cursor: pointer;
@@ -594,4 +599,8 @@ border-radius: 5px;
 
   .displayblock{
     display: block;
+  }
+
+  .shop-header {
+    background-color: #7B4F9A;
   }

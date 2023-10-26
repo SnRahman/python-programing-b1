@@ -1,1 +1,4 @@
 django
+Pillow
+django-seed
+psycopg2

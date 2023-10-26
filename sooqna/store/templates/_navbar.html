@@ -32,7 +32,7 @@
         </a>
         <ul class="navbar-nav col-lg-6 justify-content-lg-center nav-ul">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'shop' %}">shop</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
@@ -40,9 +40,20 @@
           <li class="nav-item">
             <a class="nav-link" href="#">About</a>
           </li>
+
+          {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="#">Sign Up</a>
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
           </li>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+            </li>
+          {% endif %}
+          
         </ul>
         <div class="d-lg-flex col-lg-3 justify-content-lg-end">
             <form class="d-flex" role="search">

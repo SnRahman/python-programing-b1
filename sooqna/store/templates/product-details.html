@@ -3,84 +3,90 @@
 
 {% block content %}
 <section class="py-5">
-    <div class="container px-4 px-lg-5 my-5">
-        <div class="row gx-4 gx-lg-5 align-items-center">
-            <div class="col-md-6 main-img"><img class="card-img-top mb-6 mb-md-0 " src=" {% static 'img/rsms33bvntdy2yulumkt-2.png' %}" alt="..." /></div>
-            <div class="col-md-6">
-                <h2 class="fw-bolder">Bag</h2>
-                <!-- Product reviews-->
-                <div class="d-flex text-warning mb-2">
-                    <div class="bi-star-fill"></div>
-                    <div class="bi-star-fill"></div>
-                    <div class="bi-star-fill"></div>
-                    <div class="bi-star-fill"></div>
-                    <div class="bi-star-fill"></div>
-                    <p class="px-2 text-dark">(150 Reviews) |</p>
-                    <span class="text-success">In Stock </span></p> 
-                </div>
-                <div class="fs-5 mb-3">
-                    <span class="text-decoration-line-through">$45.00</span>
-                    <span>$40.00</span>
-                </div>
-                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
-                <hr>
-                <div class="wrap d-flex align-items-center">
-                    <span class="color-heading">Colours: </span>
-                    <input type="radio" id="rad1" name="rads">
-                    <label class="color-lable"  for="rad1"></label>
-                    <input type="radio" id="rad2" name="rads" >
-                    <label class="color-lable" for="rad2"></label>
-                </div>
-
-                <div class="wrap d-flex align-items-center">
-                    <span class="color-heading">Size: </span>
-                    <input type="radio" id="size1" name="size">
-                    <label class="size-lable" for="size1">XS</label>
-
-                    <input type="radio" id="size2" name="size" >
-                    <label class="size-lable" for="size2">S</label>
-
-                    <input type="radio" id="size3" name="size" >
-                    <label class="size-lable" for="size3">M</label>
-
-                    <input type="radio" id="size4" name="size" >
-                    <label class="size-lable" for="size4">L</label>
-
-                    <input type="radio" id="size5" name="size" >
-                    <label class="size-lable" for="size5">XL</label>
-                </div>
-
-                <div class="wrap d-flex align-items-center qty-div">
-                    <button class="qty-btns"><i class="fa-solid fa-minus"></i></button>
-                    <input type="text" name="qty" id="qty" value="1">
-                    <button class="qty-btns"><i class="fa-solid fa-plus"></i></button>
-
-                    <button type="submit" class="order-btn mx-3">Buy Now</button>
-                    
-                    <button class="qty-btns"><i class="fa-regular fa-heart"></i></button>
-                </div>
-                <div class="wrap d-flex align-items-center delivery-div mt-5">
-                    <div class="icon p-3">
-                        <i class="fa-solid fa-truck"></i>
+    {% if product %}
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="row gx-4 gx-lg-5 align-items-center">
+                <div class="col-md-6 main-img"><img class="card-img-top mb-6 mb-md-0 product-details-img" src=" {{ product.image.url }}" alt="..." /></div>
+                <div class="col-md-6">
+                    <h2 class="fw-bolder">{{ product.name }}</h2>
+                    <!-- Product reviews-->
+                    <div class="d-flex text-warning mb-2">
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star-fill"></div>
+                        <p class="px-2 text-dark">(150 Reviews) |</p>
+                        <span class="text-success">In Stock </span></p> 
                     </div>
-                    <div class="text">
-                        <div>Free Delivery</div>
-                        <a href="#" class="delivery-text">Enter your postal code for free delivery availibility</a>
+                    <div class="fs-5 mb-3">
+                        {% if product.is_sale %}
+                            <span class="text-decoration-line-through">$ {{ product.price }}</span>
+                            <span>${{ product.sale_price }}</span>
+                        {% else %}
+                            <span>${{ product.price }}</span>
+                        {% endif %}
                     </div>
-                </div>
-                <div class="wrap d-flex align-items-center delivery-div">
-                    <div class="icon p-3">
-                        <i class="fa-solid fa-arrows-rotate"></i>
+                    <p class="lead">{{ product.description }}</p>
+                    <hr>
+                    <div class="wrap d-flex align-items-center">
+                        <span class="color-heading">Colours: </span>
+                        <input type="radio" id="rad1" class="cart-btn" name="rads">
+                        <label class="color-lable"  for="rad1"></label>
+                        <input type="radio" id="rad2" class="cart-btn" name="rads" >
+                        <label class="color-lable" for="rad2"></label>
                     </div>
-                    <div class="text">
-                        <div>Free Delivery</div>
-                        <span>Free 30 days Delivery returns</span><a href="#" class="delivery-text">  Details</a>
+
+                    <div class="wrap d-flex align-items-center">
+                        <span class="color-heading">Size: </span>
+                        <input type="radio" id="size1" name="size" class="cart-btn">
+                        <label class="size-lable" for="size1">XS</label>
+
+                        <input type="radio" id="size2" name="size" class="cart-btn" >
+                        <label class="size-lable" for="size2">S</label>
+
+                        <input type="radio" id="size3" name="size"  class="cart-btn">
+                        <label class="size-lable" for="size3">M</label>
+
+                        <input type="radio" id="size4" name="size"  class="cart-btn">
+                        <label class="size-lable" for="size4">L</label>
+
+                        <input type="radio" id="size5" name="size"  class="cart-btn">
+                        <label class="size-lable" for="size5">XL</label>
                     </div>
-                </div>
+
+                    <div class="wrap d-flex align-items-center qty-div">
+                        <button class="qty-btns"><i class="fa-solid fa-minus"></i></button>
+                        <input type="text" name="qty" id="qty" value="1">
+                        <button class="qty-btns"><i class="fa-solid fa-plus"></i></button>
+
+                        <button type="submit" class="order-btn mx-3">Buy Now</button>
+                        
+                        <button class="qty-btns"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                    <div class="wrap d-flex align-items-center delivery-div mt-5">
+                        <div class="icon p-3">
+                            <i class="fa-solid fa-truck"></i>
+                        </div>
+                        <div class="text">
+                            <div>Free Delivery</div>
+                            <a href="#" class="delivery-text">Enter your postal code for free delivery availibility</a>
+                        </div>
+                    </div>
+                    <div class="wrap d-flex align-items-center delivery-div">
+                        <div class="icon p-3">
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                        </div>
+                        <div class="text">
+                            <div>Free Delivery</div>
+                            <span>Free 30 days Delivery returns</span><a href="#" class="delivery-text">  Details</a>
+                        </div>
+                    </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    {% endif %}
 </section>
             
 
