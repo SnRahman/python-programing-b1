@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -20,3 +21,14 @@ class Product(models.Model):
     sale_price = models.DecimalField(default=0, decimal_places=2, max_digits=6, blank=True, null=True)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.name
+    
+class Cart(models.Model):
+    product = models.ForeignKey(Product,on_delete=models.CASCADE)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    qty = models.IntegerField(default=1)
+    sub_total = models.DecimalField(default=0,decimal_places=2,max_digits=8)
+    
+    def __str__(self):
+        return super().__str__()

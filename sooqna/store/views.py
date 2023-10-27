@@ -1,10 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm 
 from django.contrib import messages
 from django.http import HttpResponse
 from .forms.userform import SignupForm
-from .models import Product
+from .models import Product, Cart
 
 # Create your views here.
 
@@ -56,13 +56,44 @@ def product_detalis(request, id):
     return render(request,'product-details.html',{'product':product})
 
 
+def add_to_cart(request):
+    if request.method == "POST":
+        product_id = request.POST['product_id']
+        qty = int(request.POST['qty'])  
+        user = request.user
+        product = Product.objects.get(pk=product_id)
+        
+        try:
+            cart_item = Cart.objects.get(product = product)
+        except:
+            cart_item = False
 
+
+        if cart_item is False:
+            sub_total = qty * product.price
+            cart = Cart(product= product, qty= qty,user=user,sub_total = sub_total)
+            cart.save()
+        else:
+            cart_item.qty =  cart_item.qty + qty
+            cart_item.sub_total = cart_item.qty * cart_item.product.price
+            cart_item.save()
+           
+        messages.success(request,'product added successfully!')
+        return redirect('checkout')
+        # return HttpResponse(request.POST['qty'])
+    
+
+def show_cart(request):
+    cart_items = Cart.objects.filter(user=request.user)
+    grand_total = 0
+
+    for cart in cart_items:
+        grand_total += cart.sub_total 
+    
+    return render(request, 'show-cart.html',{'cart_items':cart_items, 'grand_total':grand_total})
 
 def edit_profile(request):
     return render(request, 'edit-profile.html')
-
-def show_cart(request):
-    return render(request, 'show-cart.html')
 
 def checkout(request):
     return render(request, 'checkout.html')

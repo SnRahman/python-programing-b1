@@ -20,14 +20,19 @@
                 </thead>
     
                 <tbody>
-                  <tr>
-                    <td scope="row">Bag</th>
-                    <td>30 A.E.D</td>
-                    <td> <input type="number" class="inp1 displayblock" ></td>
-                    <td>30 A.E.D</td>
-                  </tr>
+                  {% if cart_items %}
+                    {% for cart in cart_items  %}
+                      <tr>
+                        <td scope="row">{{ cart.product.name }}</th>
+                        <td> $ {{ cart.product.price }} </td>
+                        <td> {{ cart.qty }} </td>
+                        <!-- <td> <input type="number" class="inp1 displayblock" ></td> -->
+                        <td> $ {{ cart.sub_total }}</td>
+                      </tr>
+                    {% endfor %}
+                  {% endif %}
                   
-                  <tr>
+                  <!-- <tr>
                     <td scope="row">Bag spA</th>
                     <td>28 A.E.D</td>
                     <td> <input type="number" class="inp1 displayblock" ></td>
@@ -38,17 +43,17 @@
                     <td>20 A.E.D</td>
                     <td> <input type="number show" class="inp1 displayblock" placeholder="" value="" ></td>
                     <td>20 A.E.D</td>
-                  </tr>
+                  </tr> -->
                 </tbody>
               </table>
             <br>
                 <div class="d-flex justify-content-between">
                     <div >
-                        <button type="submit" class="rts" > Return to Shop </button>
+                        <a href="{% url 'shop' %}"><button type="submit" class="rts" > Return to Shop </button></a>
                     </div>
-                    <div >
+                    <!-- <div >
                         <input type="submit" value="Update Cart" class="rts1">
-                    </div>
+                    </div> -->
                 </div>
                 <br>
                 <br>
@@ -70,7 +75,7 @@
                         <input type="hidden">
                         <p>Subtotal:</p>
                         <span>
-                            AED
+                           $ {{ grand_total }}
                         </span>
                      </div>
                      <hr>
@@ -86,7 +91,7 @@
                         <input type="hidden">
                         <p>Total:</p>
                         <span>
-                            AED
+                          $ {{ grand_total }}
                         </span>
                      </div>
                      

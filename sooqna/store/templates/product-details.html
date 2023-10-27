@@ -54,16 +54,19 @@
                         <input type="radio" id="size5" name="size"  class="cart-btn">
                         <label class="size-lable" for="size5">XL</label>
                     </div>
-
-                    <div class="wrap d-flex align-items-center qty-div">
-                        <button class="qty-btns"><i class="fa-solid fa-minus"></i></button>
-                        <input type="text" name="qty" id="qty" value="1">
-                        <button class="qty-btns"><i class="fa-solid fa-plus"></i></button>
-
-                        <button type="submit" class="order-btn mx-3">Buy Now</button>
-                        
-                        <button class="qty-btns"><i class="fa-regular fa-heart"></i></button>
-                    </div>
+                    <form action="{% url 'add_to_cart' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="product_id" value="{{ product.id}}">
+                        <div class="wrap d-flex align-items-center qty-div">
+                            <button type="button" id="btn_minus" class="qty-btns"><i class="fa-solid fa-minus"></i></button>
+                            <input type="text" name="qty" id="qty" value="1">
+                            <button type="button"  id="btn_plus" class="qty-btns"><i class="fa-solid fa-plus"></i></button>
+                            
+                            <button type="submit" class="order-btn mx-3">Add to Cart</button>
+                            <button class="qty-btns"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                    </form>
+                    
                     <div class="wrap d-flex align-items-center delivery-div mt-5">
                         <div class="icon p-3">
                             <i class="fa-solid fa-truck"></i>
