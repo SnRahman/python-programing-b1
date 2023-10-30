@@ -21,7 +21,7 @@
     
                 <tbody>
                   {% if cart_items %}
-                    {% for cart in cart_items  %}
+                    {% for cart in cart_items %}
                       <tr>
                         <td scope="row">{{ cart.product.name }}</th>
                         <td> $ {{ cart.product.price }} </td>
@@ -95,7 +95,7 @@
                         </span>
                      </div>
                      
-                     <div class=" d-flex justify-content-center"><button type="submit" class="btn-cart"> Process to checkout</button>  </div>
+                     <div class=" d-flex justify-content-center"><a href="{% url 'checkout' %}"> <button type="button" class="btn-cart"> Process to checkout</button></a>  </div>
                 </div>  
     
            </div>

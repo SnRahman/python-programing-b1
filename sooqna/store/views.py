@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.http import HttpResponse
 from .forms.userform import SignupForm
+from .forms.orderform import OrderForm
 from .models import Product, Cart
 
 # Create your views here.
@@ -68,7 +69,6 @@ def add_to_cart(request):
         except:
             cart_item = False
 
-
         if cart_item is False:
             sub_total = qty * product.price
             cart = Cart(product= product, qty= qty,user=user,sub_total = sub_total)
@@ -96,4 +96,34 @@ def edit_profile(request):
     return render(request, 'edit-profile.html')
 
 def checkout(request):
-    return render(request, 'checkout.html')
+    cart_items = Cart.objects.filter(user=request.user)
+    grand_total = 0
+
+    for cart in cart_items:
+        grand_total += cart.sub_total
+
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        if form.is_valid:
+            form.save()
+
+            form_order = form.save(commit=False)
+            if request.user is not None:
+                form_order.user = request.user
+
+            if request.POST.get('order_amount'):
+                form_order.order_amount = request.POST.get('order_amount')
+    
+            if request.POST.get('mod'):
+                form_order.payment_mode = request.POST.get('mod')
+
+            form.save()
+
+            return HttpResponse(form_order)
+        else:
+            return HttpResponse(form.errors)
+
+    else:
+        form = OrderForm()
+
+    return render(request, 'checkout.html',{'cart_items':cart_items, 'grand_total':grand_total, 'form': form})

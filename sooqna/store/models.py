@@ -31,4 +31,18 @@ class Cart(models.Model):
     sub_total = models.DecimalField(default=0,decimal_places=2,max_digits=8)
     
     def __str__(self):
-        return super().__str__()
+        return f" {self.user.username} - {self.sub_total}"
+    
+class Order(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100,null=True)
+    address = models.CharField(max_length=500)
+    city = models.CharField(max_length=100)
+    phone = models.CharField(max_length=15)
+    email = models.EmailField()
+    payment_mode = models.CharField(max_length=50)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    order_amount = models.DecimalField(default=0,decimal_places=2,max_digits=8)
+
+    def __str__(self):
+        return f'{self.user.username} - {self.order_amount}'
