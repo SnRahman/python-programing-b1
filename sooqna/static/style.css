@@ -604,3 +604,16 @@ border-radius: 5px;
   .shop-header {
     background-color: #7B4F9A;
   }
+
+  .category-dropdown {
+    background-color: #7B4F9A !important;
+    color: #fff !important;
+  }
+
+  .dropdown-menu {
+    height: 300px !important;
+    overflow: scroll;
+  }
+
+
+

@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.http import HttpResponse
 from .forms.userform import SignupForm
 from .forms.orderform import OrderForm
-from .models import Product, Cart
+from .models import Product, Cart, Category
 
 # Create your views here.
 
@@ -20,7 +20,7 @@ def login_user(request):
         if user is not None:
             login(request, user)
             messages.success(request,'Logged in successfull.')
-            return redirect('login')
+            return redirect('shop')
         else:
             messages.error(request,'Invalid credentials!!!')
             return redirect('login')    
@@ -50,9 +50,21 @@ def signup_user(request):
 
 def shop(request):
     products = Product.objects.all()
-    return render(request,'shop.html',{'products':products})
+    categories = Category.objects.all()
+    category_name = ''
+    return render(request,'shop.html',{'products':products , 'categories': categories,'category_name':category_name})
+
+def category_products(request,id):
+    category_object = Category.objects.get(pk=id)
+    category_name = category_object.name
+    products = Product.objects.filter(category = category_object )
+
+    categories = Category.objects.all()
+    return render(request,'shop.html',{'products':products ,'categories': categories,'category_name':category_name})
 
 def product_detalis(request, id):
+
+    
     product = Product.objects.get(pk=id)
     return render(request,'product-details.html',{'product':product})
 
@@ -65,7 +77,7 @@ def add_to_cart(request):
         product = Product.objects.get(pk=product_id)
         
         try:
-            cart_item = Cart.objects.get(product = product)
+            cart_item = Cart.objects.get(product = product,order_id=0)
         except:
             cart_item = False
 
@@ -84,7 +96,7 @@ def add_to_cart(request):
     
 
 def show_cart(request):
-    cart_items = Cart.objects.filter(user=request.user)
+    cart_items = Cart.objects.filter(user=request.user,order_id=0)
     grand_total = 0
 
     for cart in cart_items:
@@ -96,7 +108,7 @@ def edit_profile(request):
     return render(request, 'edit-profile.html')
 
 def checkout(request):
-    cart_items = Cart.objects.filter(user=request.user)
+    cart_items = Cart.objects.filter(user=request.user,order_id=0)
     grand_total = 0
 
     for cart in cart_items:
@@ -105,7 +117,6 @@ def checkout(request):
     if request.method == 'POST':
         form = OrderForm(request.POST)
         if form.is_valid:
-            form.save()
 
             form_order = form.save(commit=False)
             if request.user is not None:
@@ -117,11 +128,21 @@ def checkout(request):
             if request.POST.get('mod'):
                 form_order.payment_mode = request.POST.get('mod')
 
-            form.save()
+            form_order.save()
 
-            return HttpResponse(form_order)
+            cart_items = Cart.objects.filter(user=request.user,order_id=0)
+
+            for cart_item in cart_items:
+                cart_item.order_id = form_order.id
+                cart_item.save()
+            messages.success(request,'Order is Placed')
+            return redirect('shop')
+            # return HttpResponse(form_order.id)
+        
         else:
-            return HttpResponse(form.errors)
+            messages.error(request,'Something went wrong. try again with valid info.')
+            return redirect('shop')
+            # return HttpResponse(form.errors)
 
     else:
         form = OrderForm()

@@ -29,7 +29,8 @@ class Cart(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     qty = models.IntegerField(default=1)
     sub_total = models.DecimalField(default=0,decimal_places=2,max_digits=8)
-    
+    order_id = models.CharField(default=0,max_length=15)
+
     def __str__(self):
         return f" {self.user.username} - {self.sub_total}"
     

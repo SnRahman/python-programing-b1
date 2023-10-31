@@ -10,8 +10,28 @@
         </div>
     </div>
 </header>
+
 <div class="container">
-    <div class="row row-cols-1 row-cols-md-5 g-6 mt-5">
+    <div class="dropdown my-5">
+        <button class="btn dropdown-toggle category-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {% if category_name != '' %}
+                Filterd By Category : {{ category_name }}
+            {% else %}
+                Filter By Category
+            {% endif %}
+        </button>
+        <ul class="dropdown-menu">
+            {% if categories  %}
+                <li><a class="dropdown-item" href="{% url 'shop' %}">All Products</a></li>
+                {% for category in categories %}
+                    <li><a class="dropdown-item" href="{% url 'category_products' category.id %}">{{ category.name }}</a></li>
+                {% endfor %}
+            {% endif %}
+          <!-- <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+        </ul>
+      </div>
+    <div class="row row-cols-1 row-cols-md-5 g-6">
         {% if products %}
             {% for product in products %}
                 <div class="col">
