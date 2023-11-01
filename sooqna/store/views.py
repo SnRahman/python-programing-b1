@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import UserCreationForm 
+from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib import messages
 from django.http import HttpResponse
 from .forms.userform import SignupForm
 from .forms.orderform import OrderForm
+from .forms.userupdateform import UserUpdateForm
+from .forms.passwordupdateform import PasswordUpdateForm
 from .models import Product, Cart, Category
 
 # Create your views here.
@@ -105,7 +106,42 @@ def show_cart(request):
     return render(request, 'show-cart.html',{'cart_items':cart_items, 'grand_total':grand_total})
 
 def edit_profile(request):
-    return render(request, 'edit-profile.html')
+    if not request.user.is_authenticated:
+        return redirect('login')
+    if request.method == 'POST':
+        form = UserUpdateForm(request.POST, instance=request.user)
+
+        if form.is_valid:
+            form.save()
+            messages.success(request, 'Profile Updated Successfully')
+        else:
+            messages.error(request, 'Error generated')
+        return redirect('edit_profile')
+    else:
+        form = UserUpdateForm(instance=request.user)
+
+    # return HttpResponse(form)
+    return render(request, 'edit-profile.html', {'form': form})
+
+def change_password(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
+
+    if request.method == 'POST':
+        form = PasswordUpdateForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)  # Important!
+
+            messages.success(request, 'Password Changed Successfully')
+            return redirect('edit_profile')
+        else:
+            messages.error(request, 'Error generated')
+            return redirect('change_password')
+    else:
+        form = PasswordUpdateForm(request.user)
+    return render(request,'change-password.html', {'form': form})
+
 
 def checkout(request):
     cart_items = Cart.objects.filter(user=request.user,order_id=0)
@@ -135,6 +171,7 @@ def checkout(request):
             for cart_item in cart_items:
                 cart_item.order_id = form_order.id
                 cart_item.save()
+                
             messages.success(request,'Order is Placed')
             return redirect('shop')
             # return HttpResponse(form_order.id)
@@ -148,3 +185,6 @@ def checkout(request):
         form = OrderForm()
 
     return render(request, 'checkout.html',{'cart_items':cart_items, 'grand_total':grand_total, 'form': form})
+
+def about(request):
+    return render(request, 'about.html')
