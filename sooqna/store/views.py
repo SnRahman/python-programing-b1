@@ -1,3 +1,4 @@
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib import messages
@@ -7,6 +8,10 @@ from .forms.orderform import OrderForm
 from .forms.userupdateform import UserUpdateForm
 from .forms.passwordupdateform import PasswordUpdateForm
 from .models import Product, Cart, Category
+from django.conf import settings
+from django.core.mail import send_mail
+from django.template import loader
+
 
 # Create your views here.
 
@@ -171,7 +176,16 @@ def checkout(request):
             for cart_item in cart_items:
                 cart_item.order_id = form_order.id
                 cart_item.save()
-                
+
+            subject = 'New order is Placed'
+            # message = f'New order is place of amount: {grand_total}'
+            msg_plain = loader.render_to_string('order_email.txt', {'cart_items': cart_items, 'grand_total':grand_total})
+            msg_html = loader.render_to_string('order_email.html', {'cart_items': cart_items, 'grand_total':grand_total})
+            
+            form_email = settings.EMAIL_HOST_USER
+            recipient_list = [request.POST['email']]
+            # send_mail(subject=subject,message=message,from_email=form_email,recipient_list=recipient_list)
+            send_mail(subject,msg_plain,form_email,recipient_list, html_message=msg_html)
             messages.success(request,'Order is Placed')
             return redirect('shop')
             # return HttpResponse(form_order.id)
@@ -188,3 +202,35 @@ def checkout(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def stripe(request):
+    return render(request, 'stripe.html')
+
+def email(request):
+    cart_items = Cart.objects.filter(user=request.user,order_id=0)
+    grand_total = 0
+
+    for cart in cart_items:
+        grand_total += cart.sub_total
+
+    message_body = loader.get_template('order_email.html')
+    return HttpResponse(message_body.render({'cart_items': cart_items, 'grand_total':grand_total}))
+
+
+    subject = 'Testing Smtp Server'
+    # message = 'Welcome mail is sended, Server is working fine.'
+    # message_body = loader.get_template('order_email.html')
+
+    msg_plain = loader.render_to_string('order_email.txt', {'cart_items': cart_items, 'grand_total':grand_total})
+    msg_html = loader.render_to_string('order_email.html', {'cart_items': cart_items, 'grand_total':grand_total})
+
+    # message = message_body.render({'cart_items': cart_items, 'grand_total':grand_total})
+    form_email = settings.EMAIL_HOST_USER
+    recipient_list = ['shahzadanouman33@gmail.com']
+    # send_mail(subject=subject,message=message,from_email=form_email,recipient_list=recipient_list)
+    send_mail(subject, msg_plain, form_email, recipient_list, html_message=msg_html)
+    return HttpResponse('mail is sended')
+
+   
+
+   

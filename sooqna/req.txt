@@ -2,3 +2,4 @@ django
 Pillow
 django-seed
 psycopg2
+stripe
